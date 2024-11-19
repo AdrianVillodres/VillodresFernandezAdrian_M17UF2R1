@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77ea4f8cfa7bad7418632a122a537d5e
+guid: abaaa0d1055bf1c48b1de4fcc8d597c7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character_UpLeft_0
+      name: Character_Down_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ff71ef83905354bac1bfe3a87459ae
-      internalID: -969511800
+      spriteID: d90b118e5292b574c83f83aabc919db6
+      internalID: -1011261077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_UpLeft_1
+      name: Character_Down_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3397760d727a3434da8d0e5fc6ed5741
-      internalID: 940443093
+      spriteID: 6bb79efa155b3694290251358bdb6520
+      internalID: 1655556037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_UpLeft_2
+      name: Character_Down_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 570e37e3ec927b644bba5fb9abf013b3
-      internalID: -2122093599
+      spriteID: 834c8d8d47e94be45add033714bc7de8
+      internalID: 520705668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_UpLeft_3
+      name: Character_Down_3
       rect:
         serializedVersion: 2
         x: 96
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35afedbdcf4b6ac4c8dfea0fe353eb96
-      internalID: 35476569
+      spriteID: 1d69fc6261f3d1a4184ac08ccecab35f
+      internalID: 897965786
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Character_UpLeft_0: -969511800
-      Character_UpLeft_1: 940443093
-      Character_UpLeft_2: -2122093599
-      Character_UpLeft_3: 35476569
+      Character_Down_0: -1011261077
+      Character_Down_1: 1655556037
+      Character_Down_2: 520705668
+      Character_Down_3: 897965786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

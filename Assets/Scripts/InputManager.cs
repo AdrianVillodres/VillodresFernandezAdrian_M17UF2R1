@@ -17,15 +17,28 @@ public class InputManager : MonoBehaviour, PlayerInputs.IPlayerActions
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-
-    public void Update()
+    private void FixedUpdate()
     {
         rb.MovePosition(rb.position + speed * Time.deltaTime * ipMove.normalized);
         animator.SetFloat("X", ipMove.x);
         animator.SetFloat("Y", ipMove.y);
+
+        if(ipMove.x == 0 && ipMove.y == 0)
+        {
+            animator.SetBool("Running", false);
+        }
+        else
+        {
+            animator.SetBool("Running", true);
+        }
     }
 
-    // Update is called once per frame
+    public void Update()
+    {
+        
+        
+    }
+
     private void OnEnable()
     {
         playerInput.Enable();
