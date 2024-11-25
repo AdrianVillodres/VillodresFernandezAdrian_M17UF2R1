@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour, PlayerInputs.IPlayerActions
+public class InputManager : MonoBehaviour, Inputs.IPlayerActions
 {
-    private PlayerInputs playerInput;
+    private Inputs playerInput;
     private Rigidbody2D rb;
     public Vector2 ipMove;
     private Character character;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerInput = new PlayerInputs();
+        playerInput = new Inputs();
         playerInput.Player.SetCallbacks(this);
         character = GetComponent<Character>();
     }

@@ -101,9 +101,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 38
-        width: 25
-        height: 38
+        y: 100
+        width: 37
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: sword_longcut-ezgif.com-gif-to-sprite-converter_1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 38
+        x: 0
+        y: 76
         width: 25
-        height: 38
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: sword_longcut-ezgif.com-gif-to-sprite-converter_2
       rect:
         serializedVersion: 2
-        x: 50
-        y: 38
+        x: 0
+        y: 51
         width: 25
-        height: 38
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: sword_longcut-ezgif.com-gif-to-sprite-converter_3
       rect:
         serializedVersion: 2
-        x: 75
-        y: 38
-        width: 25
-        height: 38
+        x: 52
+        y: 51
+        width: 19
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: sword_longcut-ezgif.com-gif-to-sprite-converter_4
       rect:
         serializedVersion: 2
-        x: 100
-        y: 38
-        width: 25
-        height: 38
+        x: 5
+        y: 26
+        width: 19
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: sword_longcut-ezgif.com-gif-to-sprite-converter_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 51
+        y: 26
         width: 25
-        height: 38
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: sword_longcut-ezgif.com-gif-to-sprite-converter_6
       rect:
         serializedVersion: 2
-        x: 25
+        x: 14
         y: 0
-        width: 25
-        height: 38
+        width: 10
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,9 +248,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 0
+        y: 1
         width: 25
-        height: 38
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

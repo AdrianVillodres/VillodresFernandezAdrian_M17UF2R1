@@ -190,7 +190,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.000000074505806, y: -0.12003064}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -201,7 +201,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.44}
+  m_Size: {x: 0.44490352, y: 0.9595609}
   m_EdgeRadius: 0
 --- !u!50 &240796732
 Rigidbody2D:
@@ -2514,6 +2514,7 @@ GameObject:
   - component: {fileID: 2071325008}
   - component: {fileID: 2071325007}
   - component: {fileID: 2071325012}
+  - component: {fileID: 2071325013}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -2553,18 +2554,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3097559, y: 0.2962882}
+  m_Offset: {x: 0.01217936, y: -0.04966408}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.25, y: 1.9}
+    oldSize: {x: 0.5, y: 1.25}
     newSize: {x: 0.25, y: 0.38}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19952363, y: 1.1996824}
+  m_Size: {x: 0.17376879, y: 1.0330929}
   m_EdgeRadius: 0
 --- !u!50 &2071325008
 Rigidbody2D:
@@ -2655,7 +2656,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2041016094, guid: 4d5e317e09013e84b9e23c219049aa8d, type: 3}
+  m_Sprite: {fileID: 1479061906, guid: 4d5e317e09013e84b9e23c219049aa8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2675,7 +2676,7 @@ Transform:
   m_GameObject: {fileID: 2071325006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29145953, y: 1.1220474, z: -0.010458886}
+  m_LocalPosition: {x: 0.077, y: 1.405, z: -0.010458886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2691,6 +2692,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfa260482586645468527f06bf6cda43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2071325013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071325006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6f87206e8fce141a12449e9568a081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
