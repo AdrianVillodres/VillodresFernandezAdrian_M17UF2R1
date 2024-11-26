@@ -21,7 +21,7 @@ public class AttackBehaviour : MonoBehaviour, Inputs.IWeaponActions
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("Attack", true);
+        sword.OnAttack();
     }
 
     public void OnAttack(InputAction.CallbackContext context)

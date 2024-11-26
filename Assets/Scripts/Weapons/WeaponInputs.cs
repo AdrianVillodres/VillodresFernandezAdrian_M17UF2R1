@@ -41,7 +41,7 @@ public partial class @WeaponInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5b8d6221-cfd3-4e73-97e1-2b96ec2f6528"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

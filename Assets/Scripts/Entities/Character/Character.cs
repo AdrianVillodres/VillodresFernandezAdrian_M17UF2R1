@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [Header("Atributos")]
     public float speed;
     void Start()
     {
