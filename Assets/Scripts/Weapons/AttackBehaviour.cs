@@ -12,7 +12,7 @@ public class AttackBehaviour : MonoBehaviour, Inputs.IWeaponActions
     private
     void Start()
     {
-       animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         weaponAttack = new Inputs();
         weaponAttack.Weapon.SetCallbacks(this);
         sword = GetComponent<Melee>();
@@ -21,7 +21,7 @@ public class AttackBehaviour : MonoBehaviour, Inputs.IWeaponActions
     // Update is called once per frame
     void Update()
     {
-        sword.OnAttack();
+        
     }
 
     public void OnAttack(InputAction.CallbackContext context)
