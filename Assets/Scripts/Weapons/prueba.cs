@@ -29,12 +29,5 @@ public class prueba : MonoBehaviour
 
         // Rotar el arma hacia el puntero del ratón
         this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-        // Si se mantiene presionada la tecla "R", rota el arma alrededor del jugador
-        if (Input.GetKey(KeyCode.R))
-        {
-            // Rota el arma alrededor del jugador a una velocidad constante
-            this.transform.RotateAround(rotateAround.position, Vector3.forward, rotationSpeed * Time.deltaTime);
-        }
     }
 }
