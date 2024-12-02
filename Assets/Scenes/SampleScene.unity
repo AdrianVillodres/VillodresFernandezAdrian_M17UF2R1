@@ -721,7 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 45
   rotateAround: {fileID: 240796735}
-  player: {fileID: 0}
+  player: {fileID: 240796735}
 --- !u!1 &715826916
 GameObject:
   m_ObjectHideFlags: 0
