@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     Animator animator;
-    public string animationStateName;
     public Transform player;
     public float life;
     public float speed;
@@ -16,14 +15,11 @@ public class Bomb : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        SeePlayer();
-
-        if (isDestroying)
+        if (!isDestroying)
         {
-            CheckAnimationAndDestroy();
+            SeePlayer();
         }
     }
 
@@ -50,14 +46,6 @@ public class Bomb : MonoBehaviour
         {
             animator.SetBool("ColPlayer", true);
             isDestroying = true;
-        }
-    }
-    private void CheckAnimationAndDestroy()
-    {
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.IsName(animationStateName) && stateInfo.normalizedTime >= 1f)
-        {
-            Destroy(gameObject);
         }
     }
 }
