@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPool : MonoBehaviour
+public class GrenadePool : MonoBehaviour
 {
-    public static BulletPool pool;
+    public static GrenadePool pool;
 
-    public GameObject Bullet;
+    public GameObject Grenade;
     [SerializeField] private GameObject SpawnPoint;
     [SerializeField] private int initialPoolSize = 10;
 
@@ -14,17 +14,17 @@ public class BulletPool : MonoBehaviour
 
     void Start()
     {
-        if (BulletPool.pool != null && BulletPool.pool != this)
+        if (GrenadePool.pool != null && GrenadePool.pool != this)
         {
             Destroy(gameObject);
         }
-        BulletPool.pool = this;
+        GrenadePool.pool = this;
 
 
         stack = new Stack<GameObject>();
         for (int i = 0; i < initialPoolSize; i++)
         {
-            GameObject obj = Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(Grenade, SpawnPoint.transform.position, Quaternion.identity);
             obj.SetActive(false);
             stack.Push(obj);
         }
@@ -47,7 +47,7 @@ public class BulletPool : MonoBehaviour
         }
         else
         {
-            GameObject obj = Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(Grenade, SpawnPoint.transform.position, Quaternion.identity);
             return obj;
         }
     }

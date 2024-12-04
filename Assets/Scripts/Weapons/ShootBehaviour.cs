@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class ShootBehaviour : MonoBehaviour
 {
     public Transform firePoint; 
     public float fireRate = 0.1f;

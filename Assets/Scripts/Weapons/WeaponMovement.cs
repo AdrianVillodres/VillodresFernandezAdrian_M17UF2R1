@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Prueba : MonoBehaviour
+public class WeaponMovement : MonoBehaviour
 {
     [SerializeField] private Transform rotateAround;
     [SerializeField] private float distanceFromPlayer = 1.5f;

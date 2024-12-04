@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Grenade : MonoBehaviour
 {
     public float speed = 10f;
     public float lifetime = 2f;
@@ -14,13 +14,13 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        
+
         transform.Translate(Vector3.right * speed * Time.deltaTime);
 
         lifeTimer -= Time.deltaTime;
         if (lifeTimer <= 0)
         {
-            BulletPool.pool.Push(gameObject);
+            GrenadePool.pool.Push(gameObject);
         }
     }
 
@@ -31,6 +31,6 @@ public class Bullet : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        BulletPool.pool.Push(gameObject);
+        GrenadePool.pool.Push(gameObject);
     }
 }
