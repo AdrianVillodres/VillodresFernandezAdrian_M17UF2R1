@@ -131,8 +131,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 26434297}
-  - component: {fileID: 26434296}
   - component: {fileID: 26434298}
+  - component: {fileID: 26434296}
   m_Layer: 0
   m_Name: BulletPool
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 2961672135117492205, guid: fa95cbf3d6539e64e9c1ee5db083e5f0, type: 3}
-  SpawnPoint: {fileID: 699269110}
+  SpawnPoint: {fileID: 1520785725}
   initialPoolSize: 10
 --- !u!4 &26434297
 Transform:
@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84de684404cc941a08c03391502af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grenade: {fileID: 8692092915744591192, guid: 867e3390521cb3f41827182cd67b7278, type: 3}
-  SpawnPoint: {fileID: 699269110}
+  Grenade: {fileID: 5561924324993477297, guid: 867e3390521cb3f41827182cd67b7278, type: 3}
+  SpawnPoint: {fileID: 1943987675}
   initialPoolSize: 10
 --- !u!1 &240796729
 GameObject:
@@ -2934,7 +2934,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 297239615, guid: 2a01543364cc76a4ba07ee342366b8f6, type: 3}
+  m_Sprite: {fileID: 1006304698, guid: 222f41e0ac5bb834290d985685a7b21a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3151,6 +3151,7 @@ GameObject:
   - component: {fileID: 1902233760}
   - component: {fileID: 1902233762}
   - component: {fileID: 1902233761}
+  - component: {fileID: 1902233763}
   m_Layer: 7
   m_Name: Flames
   m_TagString: Flames
@@ -3166,13 +3167,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902233759}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: 0.61, z: -0.03}
+  m_LocalRotation: {x: 0.48761678, y: 0.5120839, z: 0.5120839, w: 0.48761678}
+  m_LocalPosition: {x: 0.73, y: 0.06, z: -0.03}
   m_LocalScale: {x: 0.47799614, y: 0.33691007, z: 0.20443758}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2105743895}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.804, y: 90, z: 90}
 --- !u!199 &1902233761
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -8028,6 +8029,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1902233763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902233759}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2212ebc067587864fb1ff69d50dc390e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateAround: {fileID: 240796735}
+  distanceFromPlayer: 2
 --- !u!1 &1943987675
 GameObject:
   m_ObjectHideFlags: 0
@@ -8039,12 +8054,11 @@ GameObject:
   - component: {fileID: 1943987678}
   - component: {fileID: 1943987677}
   - component: {fileID: 1943987676}
-  - component: {fileID: 1943987679}
-  - component: {fileID: 1943987680}
   - component: {fileID: 1943987681}
+  - component: {fileID: 1943987682}
   m_Layer: 0
   m_Name: GrenadeLauncher
-  m_TagString: Untagged
+  m_TagString: GrenadeLauncher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8102,12 +8116,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1010932017, guid: f250e6b07c9ad0f499b75d46d19f74ae, type: 3}
+  m_Sprite: {fileID: -958860654, guid: dfbeb4bce8b2bdf4398c4a9a40cba8f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.11, y: 0.27}
+  m_Size: {x: 0.675, y: 0.275}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8122,84 +8136,12 @@ Transform:
   m_GameObject: {fileID: 1943987675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.04, z: 0}
+  m_LocalPosition: {x: -0.06, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1943987679
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943987675}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &1943987680
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943987675}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0042095184}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.36666667, y: 0.9}
-    newSize: {x: 0.11, y: 0.27}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36666667, y: 0.70636153}
-  m_EdgeRadius: 0
 --- !u!114 &1943987681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8207,13 +8149,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943987675}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2212ebc067587864fb1ff69d50dc390e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAround: {fileID: 240796735}
   distanceFromPlayer: 1.5
+--- !u!114 &1943987682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943987675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba256d1360a3037458cc5c70bbdfdd8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1943987678}
+  fireRate: 1
 --- !u!1 &2105743892
 GameObject:
   m_ObjectHideFlags: 0
@@ -8224,13 +8180,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2105743895}
   - component: {fileID: 2105743894}
-  - component: {fileID: 2105743896}
-  - component: {fileID: 2105743897}
   - component: {fileID: 2105743893}
   - component: {fileID: 2105743898}
   m_Layer: 0
   m_Name: Flamethrower
-  m_TagString: Untagged
+  m_TagString: Flamethrowe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8288,12 +8242,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 13608788, guid: a401a21412298eb4d85129f65ed529d7, type: 3}
+  m_Sprite: {fileID: 305248893, guid: cf95751cd359b954485fbfc8d481b578, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.7}
+  m_Size: {x: 1.7, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8308,85 +8262,13 @@ Transform:
   m_GameObject: {fileID: 2105743892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 0.89, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1902233760}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2105743896
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105743892}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &2105743897
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105743892}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0042094886}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1.275}
-    newSize: {x: 1, y: 1.7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 1.0813618}
-  m_EdgeRadius: 0
 --- !u!114 &2105743898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8394,7 +8276,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105743892}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2212ebc067587864fb1ff69d50dc390e, type: 3}
   m_Name: 

@@ -10,6 +10,7 @@ TagManager:
   - GrenadeLauncher
   - Rifle
   - Flamethrowe
+  - Bullet
   layers:
   - Default
   - TransparentFX

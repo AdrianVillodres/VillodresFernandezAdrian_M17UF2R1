@@ -1,8 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootBehaviour : MonoBehaviour
+public class GrenadeShootBehaviour : MonoBehaviour
 {
-    public Transform firePoint; 
+    public Transform firePoint;
     public float fireRate = 0.1f;
 
     private float fireTimer;
@@ -20,8 +22,8 @@ public class ShootBehaviour : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = BulletPool.pool.Pop();
-        bullet.transform.position = firePoint.position;
-        bullet.transform.rotation = firePoint.rotation;
+        GameObject Grenade = GrenadePool.pool.Pop();
+        Grenade.transform.position = firePoint.position;
+        Grenade.transform.rotation = firePoint.rotation;
     }
 }
