@@ -100,10 +100,10 @@ TextureImporter:
       name: EnemyBullets_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 190
-        width: 20
-        height: 15
+        x: 190
+        y: 485
+        width: 25
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: EnemyBullets_1
       rect:
         serializedVersion: 2
-        x: 95
-        y: 185
-        width: 40
-        height: 25
+        x: 190
+        y: 405
+        width: 25
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: EnemyBullets_2
       rect:
         serializedVersion: 2
-        x: 175
-        y: 185
-        width: 40
-        height: 25
+        x: 30
+        y: 335
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: EnemyBullets_3
       rect:
         serializedVersion: 2
-        x: 255
-        y: 185
-        width: 40
-        height: 25
+        x: 110
+        y: 335
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: EnemyBullets_4
       rect:
         serializedVersion: 2
-        x: 335
-        y: 185
-        width: 40
-        height: 25
+        x: 205
+        y: 335
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: EnemyBullets_5
       rect:
         serializedVersion: 2
-        x: 25
-        y: 110
-        width: 20
-        height: 15
+        x: 190
+        y: 320
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: EnemyBullets_6
       rect:
         serializedVersion: 2
-        x: 95
-        y: 105
-        width: 40
-        height: 25
+        x: 220
+        y: 325
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: EnemyBullets_7
       rect:
         serializedVersion: 2
-        x: 175
-        y: 105
-        width: 40
-        height: 25
+        x: 30
+        y: 255
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: EnemyBullets_8
       rect:
         serializedVersion: 2
-        x: 255
-        y: 105
-        width: 40
-        height: 25
+        x: 110
+        y: 255
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: EnemyBullets_9
       rect:
         serializedVersion: 2
-        x: 335
-        y: 105
-        width: 40
-        height: 25
+        x: 205
+        y: 250
+        width: 5
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: EnemyBullets_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 25
-        width: 15
-        height: 25
+        x: 195
+        y: 240
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: EnemyBullets_11
       rect:
         serializedVersion: 2
-        x: 80
-        y: 25
-        width: 15
-        height: 25
+        x: 215
+        y: 245
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: EnemyBullets_12
       rect:
         serializedVersion: 2
-        x: 160
-        y: 15
-        width: 40
-        height: 50
+        x: 30
+        y: 175
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: EnemyBullets_13
       rect:
         serializedVersion: 2
-        x: 240
-        y: 35
-        width: 10
-        height: 10
+        x: 110
+        y: 175
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,10 +394,10 @@ TextureImporter:
       name: EnemyBullets_14
       rect:
         serializedVersion: 2
-        x: 320
-        y: 40
-        width: 10
-        height: 10
+        x: 175
+        y: 160
+        width: 50
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +415,10 @@ TextureImporter:
       name: EnemyBullets_15
       rect:
         serializedVersion: 2
-        x: 405
-        y: 25
-        width: 65
-        height: 25
+        x: 30
+        y: 95
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: EnemyBullets_16
       rect:
         serializedVersion: 2
-        x: 485
-        y: 25
-        width: 65
-        height: 25
+        x: 110
+        y: 95
+        width: 25
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,10 +457,10 @@ TextureImporter:
       name: EnemyBullets_17
       rect:
         serializedVersion: 2
-        x: 250
-        y: 30
-        width: 10
-        height: 5
+        x: 190
+        y: 80
+        width: 25
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +478,10 @@ TextureImporter:
       name: EnemyBullets_18
       rect:
         serializedVersion: 2
-        x: 335
+        x: 35
         y: 25
-        width: 10
-        height: 10
+        width: 15
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +499,10 @@ TextureImporter:
       name: EnemyBullets_19
       rect:
         serializedVersion: 2
-        x: 245
-        y: 15
-        width: 10
-        height: 10
+        x: 115
+        y: 25
+        width: 15
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,10 +520,10 @@ TextureImporter:
       name: EnemyBullets_20
       rect:
         serializedVersion: 2
-        x: 325
-        y: 10
-        width: 10
-        height: 10
+        x: 190
+        y: 0
+        width: 25
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

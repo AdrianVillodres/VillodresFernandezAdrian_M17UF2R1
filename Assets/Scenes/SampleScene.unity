@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 2961672135117492205, guid: fa95cbf3d6539e64e9c1ee5db083e5f0, type: 3}
   SpawnPoint: {fileID: 1520785725}
-  initialPoolSize: 10
 --- !u!4 &26434297
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Grenade: {fileID: 5561924324993477297, guid: 867e3390521cb3f41827182cd67b7278, type: 3}
   SpawnPoint: {fileID: 1943987675}
-  initialPoolSize: 10
 --- !u!1 &240796729
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,10 +415,10 @@ GameObject:
   - component: {fileID: 356430180}
   - component: {fileID: 356430179}
   - component: {fileID: 356430178}
-  - component: {fileID: 356430182}
-  - component: {fileID: 356430184}
   - component: {fileID: 356430181}
   - component: {fileID: 356430183}
+  - component: {fileID: 356430182}
+  - component: {fileID: 356430184}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Enemy
@@ -2816,6 +2814,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1216269949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216269950}
+  - component: {fileID: 1216269951}
+  m_Layer: 0
+  m_Name: Shoots
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1216269950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216269949}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.119999886, y: -0.5899999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1713896998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1216269951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216269949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fc059a8479b084fa4e10b16ccdb47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 2728631414712673223, guid: b9fd30d57fac61c469fdd24617ae14a8, type: 3}
+  SpawnPoint: {fileID: 1713896995}
 --- !u!1 &1474745236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,9 +3044,10 @@ GameObject:
   - component: {fileID: 1713896997}
   - component: {fileID: 1713896996}
   - component: {fileID: 1713896999}
+  - component: {fileID: 1713897000}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3092,7 +3137,8 @@ Transform:
   m_LocalPosition: {x: 5.4, y: 3.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1216269950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1713896999
@@ -3140,6 +3186,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.8666667}
   m_EdgeRadius: 0
+--- !u!114 &1713897000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713896995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d563401e536331c4892da2b0081df968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 240796735}
+  eBullet: {fileID: 1216269951}
+  detectionRange: 4
+  shootCooldown: 1
 --- !u!1 &1902233759
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class BulletPool : MonoBehaviour
 
     public GameObject Bullet;
     [SerializeField] private GameObject SpawnPoint;
-    [SerializeField] private int initialPoolSize = 10;
 
     private Stack<GameObject> stack;
 
@@ -22,12 +21,6 @@ public class BulletPool : MonoBehaviour
 
 
         stack = new Stack<GameObject>();
-        for (int i = 0; i < initialPoolSize; i++)
-        {
-            GameObject obj = Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
-            obj.SetActive(false);
-            stack.Push(obj);
-        }
     }
 
     public void Push(GameObject obj)
