@@ -5,29 +5,28 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     Animator animator;
+    public float life;
     public Transform player;
     public EnemyBulletPool eBullet;
     public float detectionRange = 150f;
     public float shootCooldown = 1f;
-
+    private bool isDestroying = false;
     private float shootTimer;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         shootTimer = shootCooldown;
-
-        if (eBullet == null)
-        {
-            Debug.LogError("No se ha asignado el componente EnemyBulletPool en el Inspector.");
-        }
     }
 
     void Update()
     {
-        if (player != null && eBullet != null)
+        if (!isDestroying)
         {
-            DetectAndShoot();
+            if (player != null && eBullet != null)
+            {
+                DetectAndShoot();
+            }
         }
     }
 
