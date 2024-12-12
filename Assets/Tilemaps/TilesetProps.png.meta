@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7afdb9d73284075419fa94fbee9a9a4d
+guid: 38be76c686d9bc74090c2d343367708c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TX Struct_0
+      name: TilesetProps_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 384
-        width: 64
-        height: 96
+        x: 48
+        y: 192
+        width: 32
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6322ab68f833ea74eacdf30cbbd95866
-      internalID: -890547188
+      spriteID: ecacce6a91f6bf94580c7a8899545587
+      internalID: -1358405897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_1
+      name: TilesetProps_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 65
-        height: 96
+        x: 80
+        y: 192
+        width: 32
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d802768d1215781418981ed471826287
-      internalID: 346497730
+      spriteID: c0c1b752f1afad642a5619b3cde026a1
+      internalID: -477679971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_2
+      name: TilesetProps_2
       rect:
         serializedVersion: 2
-        x: 224
-        y: 384
-        width: 65
-        height: 96
+        x: 112
+        y: 191
+        width: 32
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c3cb093b694c2479503b0703858562
-      internalID: -348126369
+      spriteID: 095bad887b8a65a48bd976e7254f8764
+      internalID: -719100299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_3
+      name: TilesetProps_3
       rect:
         serializedVersion: 2
-        x: 408
-        y: 421
-        width: 80
-        height: 64
+        x: 145
+        y: 32
+        width: 17
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,92 +174,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2726999256e5d64cbbcf10d01985c11
-      internalID: 897637426
+      spriteID: a18e425da5245a74dab1e2053b3e4ff2
+      internalID: 1011726642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_4
+      name: TilesetProps_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 256
-        width: 64
-        height: 96
+        x: 49
+        y: 17
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d5dcdd9e53d65e41baa8328ba1c7654
-      internalID: -2649258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Struct_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 65
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72e9f7a2f38307f499972fb70156ae16
-      internalID: 1951435929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Struct_6
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 256
-        width: 65
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d77b5be5e88b4c64d9465a505c24dfa9
-      internalID: 612232763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Struct_7
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b15cf0941453c4648ac1704aca8bdb12
-      internalID: 817047930
+      spriteID: 952c612698f61e64ca24df33b7b18f59
+      internalID: -1626953333
       vertices: []
       indices: 
       edges: []
@@ -275,14 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TX Struct_0: -890547188
-      TX Struct_1: 346497730
-      TX Struct_2: -348126369
-      TX Struct_3: 897637426
-      TX Struct_4: -2649258
-      TX Struct_5: 1951435929
-      TX Struct_6: 612232763
-      TX Struct_7: 817047930
+      TilesetProps_0: -1358405897
+      TilesetProps_1: -477679971
+      TilesetProps_2: -719100299
+      TilesetProps_3: 1011726642
+      TilesetProps_4: -1626953333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
