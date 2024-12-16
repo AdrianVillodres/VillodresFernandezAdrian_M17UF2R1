@@ -416,7 +416,9 @@ GameObject:
   - component: {fileID: 356430179}
   - component: {fileID: 356430178}
   - component: {fileID: 356430181}
+  - component: {fileID: 356430185}
   - component: {fileID: 356430183}
+  - component: {fileID: 356430186}
   - component: {fileID: 356430182}
   - component: {fileID: 356430184}
   m_Layer: 0
@@ -561,9 +563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92d5da27494e93498defbc4c9e07273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 240796735}
-  life: 1.5
-  speed: 2
+  states:
+  - {fileID: 11400000, guid: b61ca913cbd855d46ab729d116feeb4c, type: 2}
+  - {fileID: 11400000, guid: 511ac4d1d7f26a44fa805a79dfd13c5f, type: 2}
+  - {fileID: 11400000, guid: b6932597dd8b2284c8e9ba0bf3106344, type: 2}
+  CurrentState: {fileID: 11400000, guid: b61ca913cbd855d46ab729d116feeb4c, type: 2}
+  HP: 5
+  target: {fileID: 0}
 --- !u!50 &356430183
 Rigidbody2D:
   serializedVersion: 4
@@ -590,7 +596,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &356430184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +609,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc3e071bf3ff7c4cb6452bd533be605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &356430185
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356430177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
+--- !u!114 &356430186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356430177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac645e28e597f6b468b0da6bfeccebd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +3098,7 @@ GameObject:
   - component: {fileID: 1713896997}
   - component: {fileID: 1713896996}
   - component: {fileID: 1713896999}
+  - component: {fileID: 1713897003}
   - component: {fileID: 1713897001}
   - component: {fileID: 1713897000}
   - component: {fileID: 1713897002}
@@ -3172,7 +3227,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3244,6 +3299,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8770b7d53afb119448a22cffbdecc204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &1713897003
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713896995}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
 --- !u!1 &1902233759
 GameObject:
   m_ObjectHideFlags: 0
