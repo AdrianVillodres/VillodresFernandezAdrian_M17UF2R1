@@ -8,42 +8,55 @@ public class BombFSM : MonoBehaviour
     public StatesSO CurrentState;
     public int HP;
     public GameObject target;
-    private ChaseBehaviour chasebehaviour;
     private Animator animator;
+    private Rigidbody2D rb;
     private void Start()
     {
-        chasebehaviour = GetComponent<ChaseBehaviour>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        target = collision.gameObject;
-        animator.SetBool("SeePlayer", true);
-        GoToState<ChaseState>();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            target = collision.gameObject;
+            animator.SetBool("SeePlayer", true);
+            GoToState<ChaseState>();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GoToState<IdleState>();
-        animator.SetBool("SeePlayer", false);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GoToState<IdleState>();
+            animator.SetBool("SeePlayer", false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        animator.SetBool("ColPlayer", true) ;
-        GoToState<ExplodeState>();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animator.SetBool("ColPlayer", true);
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            GoToState<ExplodeState>();
+        }
     }
 
     private void Update()
     {
         CurrentState.OnStateUpdate(this);
-        CheckIfAlive();
     }
 
     public void CheckIfAlive()
     {
         if (HP < 1)
+        {
+            animator.SetBool("ColPlayer", true);
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();
+        }
     }
 
     public void GoToState<T>() where T : StatesSO

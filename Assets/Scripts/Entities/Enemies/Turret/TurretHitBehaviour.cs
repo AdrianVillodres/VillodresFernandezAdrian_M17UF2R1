@@ -4,36 +4,18 @@ using UnityEngine;
 
 public class TurretHitBehaviour : MonoBehaviour
 {
-    private Turret turret;
-    Animator animator;
-    private bool isDestroying = false;
+    private TurretFSM turret;
     void Start()
     {
-        turret = GetComponent<Turret>();
-        animator = GetComponent<Animator>();
-    }
-
-    void Update()
-    {
-        if (!isDestroying)
-        {
-            if (turret.life <= 0)
-            {
-                isDestroying = true;
-            }
-        }
-        else
-        {
-            GameObject.Destroy(turret.gameObject);
-        }
-        
+        turret = GetComponent<TurretFSM>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Sword") || collision.gameObject.CompareTag("Bullet"))
         {
-            turret.life--;
+            turret.HP--;
+            turret.CheckIfAlive();
         }
     }
 }

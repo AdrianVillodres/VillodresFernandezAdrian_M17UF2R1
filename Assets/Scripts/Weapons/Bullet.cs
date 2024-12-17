@@ -24,13 +24,12 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            BulletPool.pool.Push(gameObject);
         }
-
-        BulletPool.pool.Push(gameObject);
+        
     }
 }

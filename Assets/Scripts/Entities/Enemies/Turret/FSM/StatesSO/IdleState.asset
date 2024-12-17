@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1af2923b258b2347a1147b0da9ddc10, type: 3}
+  m_Script: {fileID: 11500000, guid: 02f323a05d3abc84b934ce0ab9d8d1fb, type: 3}
   m_Name: IdleState
   m_EditorClassIdentifier: 
   StatesToGo:
-  - {fileID: 11400000, guid: 511ac4d1d7f26a44fa805a79dfd13c5f, type: 2}
-  - {fileID: 11400000, guid: b6932597dd8b2284c8e9ba0bf3106344, type: 2}
+  - {fileID: 11400000, guid: 3d39ada7258a87e4a9cca0af633f4cae, type: 2}
+  - {fileID: 11400000, guid: eb1449eac05d7b945adf005e1cf2b99f, type: 2}

@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1af2923b258b2347a1147b0da9ddc10, type: 3}
-  m_Name: IdleState
+  m_Script: {fileID: 11500000, guid: 75a58572f08ffee42b50104d65a626df, type: 3}
+  m_Name: DieState
   m_EditorClassIdentifier: 
-  StatesToGo:
-  - {fileID: 11400000, guid: 511ac4d1d7f26a44fa805a79dfd13c5f, type: 2}
-  - {fileID: 11400000, guid: b6932597dd8b2284c8e9ba0bf3106344, type: 2}
+  StatesToGo: []
