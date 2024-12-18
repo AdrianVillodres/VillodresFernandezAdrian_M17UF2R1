@@ -24,13 +24,11 @@ public class Grenade : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            GrenadePool.pool.Push(gameObject);
         }
-
-        GrenadePool.pool.Push(gameObject);
     }
 }

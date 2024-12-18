@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BombFSM : MonoBehaviour
 {
-    public List<StatesSO> states;
-    public StatesSO CurrentState;
+    public List<StatesSO<BombFSM>> states;
+    public StatesSO<BombFSM> CurrentState;
     public int HP;
     public GameObject target;
     private Animator animator;
@@ -59,7 +59,7 @@ public class BombFSM : MonoBehaviour
         }
     }
 
-    public void GoToState<T>() where T : StatesSO
+    public void GoToState<T>() where T : StatesSO<BombFSM>
     {
         if (CurrentState.StatesToGo.Find(state => state is T))
         {

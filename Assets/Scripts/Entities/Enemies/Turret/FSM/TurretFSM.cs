@@ -4,8 +4,8 @@ using UnityEngine;
 using System;
 public class TurretFSM : MonoBehaviour
 {
-    public List<StatesSOTurret> states;
-    public StatesSOTurret CurrentState;
+    public List<StatesSO<TurretFSM>> states;
+    public StatesSO<TurretFSM> CurrentState;
     public int HP;
     private Animator animator;
     private Rigidbody2D rb;
@@ -45,7 +45,7 @@ public class TurretFSM : MonoBehaviour
         }
     }
 
-    public void GoToState<T>() where T : StatesSOTurret
+    public void GoToState<T>() where T : StatesSO<TurretFSM>
     {
         if (CurrentState.StatesToGo.Find(state => state is T))
         {

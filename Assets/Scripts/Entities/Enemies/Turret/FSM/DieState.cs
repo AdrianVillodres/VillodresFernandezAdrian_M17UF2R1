@@ -5,7 +5,7 @@ using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [CreateAssetMenu(fileName = "DieState", menuName = "StatesSOTurret/Die")]
-public class DieState : StatesSOTurret
+public class DieState : StatesSO<TurretFSM>
 {
     public override void OnStateEnter(TurretFSM ec)
     {

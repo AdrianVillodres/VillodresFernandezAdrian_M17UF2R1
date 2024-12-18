@@ -5,7 +5,7 @@ using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [CreateAssetMenu(fileName = "ExplodeState", menuName = "StatesSO/Explode")]
-public class ExplodeState : StatesSO
+public class ExplodeState : StatesSO<BombFSM>
 {
     public override void OnStateEnter(BombFSM ec)
     {

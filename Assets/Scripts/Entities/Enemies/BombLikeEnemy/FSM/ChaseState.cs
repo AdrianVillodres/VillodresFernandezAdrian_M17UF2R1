@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "ChaseState", menuName = "StatesSO/Chase")]
-public class ChaseState : StatesSO
+public class ChaseState : StatesSO<BombFSM>
 {
 
     public override void OnStateEnter(BombFSM ec)

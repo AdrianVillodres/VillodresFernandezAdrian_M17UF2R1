@@ -7,7 +7,6 @@ public class AttackBehaviour : MonoBehaviour, Inputs.IWeaponActions
 {
     private Animator animator;
     private Inputs weaponAttack;
-    private Melee sword;
 
     private
     void Start()
@@ -15,7 +14,6 @@ public class AttackBehaviour : MonoBehaviour, Inputs.IWeaponActions
         animator = GetComponent<Animator>();
         weaponAttack = new Inputs();
         weaponAttack.Weapon.SetCallbacks(this);
-        sword = GetComponent<Melee>();
     }
 
     // Update is called once per frame
@@ -24,8 +22,13 @@ public class AttackBehaviour : MonoBehaviour, Inputs.IWeaponActions
         
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnShoot(InputAction.CallbackContext context)
     {
         animator.SetBool("Attack", true);
+    }
+
+    public void OnChange(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
     }
 }

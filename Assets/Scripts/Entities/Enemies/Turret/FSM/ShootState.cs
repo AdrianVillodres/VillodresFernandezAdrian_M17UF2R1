@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ShootState", menuName = "StatesSOTurret/Shoot")]
-public class ShootState : StatesSOTurret
+public class ShootState : StatesSO<TurretFSM>
 {
     private float shootCooldown = 1f;
     private float shootTimer;

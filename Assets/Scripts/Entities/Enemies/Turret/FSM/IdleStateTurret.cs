@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "IdleState", menuName = "StatesSOTurret/IdleTurret")]
-public class IdleStateTurret : StatesSOTurret
+public class IdleStateTurret : StatesSO<TurretFSM>
 {
     private Animator animator;
     public override void OnStateEnter(TurretFSM ec)
