@@ -1,18 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Flamethrower : MonoBehaviour
+public class FlamethrowerController : MonoBehaviour, Inputs.IWeaponActions
 {
-    // Start is called before the first frame update
-    void Start()
+    public ParticleSystem flameParticles;
+    private Inputs ic;
+
+    private void Awake()
     {
-        
+        ic = new Inputs();
+        ic.Weapon.SetCallbacks(this);
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        ic.Enable();
+
+
+        if (flameParticles.isPlaying)
+        {
+            flameParticles.Stop();
+        }
+    }
+
+    private void OnDisable()
+    {
+        ic.Disable(); 
+    }
+
     void Update()
     {
-        
+
+    }
+
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (!flameParticles.isPlaying)
+            {
+                flameParticles.Play();
+            }
+        }
+        else if (context.canceled)
+        {
+            if (flameParticles.isPlaying)
+            {
+                flameParticles.Stop();
+            }
+        }
+    }
+
+    public void OnChange(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
     }
 }
