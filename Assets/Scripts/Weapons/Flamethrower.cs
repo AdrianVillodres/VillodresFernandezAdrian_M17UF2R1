@@ -34,6 +34,14 @@ public class FlamethrowerController : MonoBehaviour, Inputs.IWeaponActions
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemigo golpeado!");
+        }
+    }
+
     public void OnShoot(InputAction.CallbackContext context)
     {
         if (context.performed)
