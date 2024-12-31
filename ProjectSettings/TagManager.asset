@@ -11,6 +11,9 @@ TagManager:
   - Rifle
   - Flamethrowe
   - Bullet
+  - Coin
+  - Door
+  - Key
   layers:
   - Default
   - TransparentFX

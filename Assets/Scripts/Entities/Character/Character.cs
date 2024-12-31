@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -11,23 +11,67 @@ public class Character : MonoBehaviour
     [Header("Atributos")]
     public float speed;
     public int HP;
+    public int gold = 0;
+    public int keys = 0;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+
         if (character == null)
         {
             character = this;
             DontDestroyOnLoad(gameObject);
-        } else
+        }
+        else
         {
             Destroy(gameObject);
+            return;
+        }
+
+        if (GameEvents.instance != null)
+        {
+            GameEvents.instance.OnDoorInteracted += CheckKeysForDoor;
         }
     }
 
-    // Update is called once per frame
+    private void OnDestroy()
+    {
+        if (GameEvents.instance != null)
+        {
+            GameEvents.instance.OnDoorInteracted -= CheckKeysForDoor;
+        }
+    }
+
     void Update()
     {
 
+    }
+
+    public void AddGold()
+    {
+        gold++;
+        Debug.Log("Oro actual: " + gold);
+    }
+
+    public void AddKey()
+    {
+        keys++;
+        Debug.Log("Llaves actuales: " + keys);
+    }
+
+    private void CheckKeysForDoor(int keysRequired, Action onSuccess)
+    {
+        if (keys >= keysRequired)
+        {
+            keys -= keysRequired;
+            Debug.Log($"Puerta abierta, llaves restantes: {keys}");
+            onSuccess?.Invoke();
+        }
+        else
+        {
+            Debug.Log("No tienes suficientes llaves.");
+        }
     }
 
     public void CheckIfAlive()
@@ -35,6 +79,7 @@ public class Character : MonoBehaviour
         if (HP < 1)
         {
             animator.SetBool("Die", true);
+            Debug.Log("El personaje ha muerto.");
         }
     }
 

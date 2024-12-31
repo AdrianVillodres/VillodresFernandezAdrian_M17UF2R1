@@ -7,6 +7,8 @@ public class BombFSM : MonoBehaviour
     public List<StatesSO<BombFSM>> states;
     public StatesSO<BombFSM> CurrentState;
     public int HP;
+    public GameObject coin;
+    public int coinDropCount = 1;
     public GameObject target;
     private Animator animator;
     private Rigidbody2D rb;
@@ -56,6 +58,21 @@ public class BombFSM : MonoBehaviour
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();
+            DropCoins();
+        }
+    }
+
+    private void DropCoins()
+    {
+        for (int i = 0; i < coinDropCount; i++)
+        {
+            Vector3 randomPosition = transform.position + new Vector3(
+                Random.Range(-1f, 1f),
+                0.5f,
+                Random.Range(-1f, 1f)
+            );
+
+            Instantiate(coin, randomPosition, Quaternion.identity);
         }
     }
 

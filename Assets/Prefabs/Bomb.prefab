@@ -252,4 +252,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b6932597dd8b2284c8e9ba0bf3106344, type: 2}
   CurrentState: {fileID: 11400000, guid: b61ca913cbd855d46ab729d116feeb4c, type: 2}
   HP: 5
+  coin: {fileID: 1053979388816891220, guid: 0ce81093183ee6b489af1e2c91b57d58, type: 3}
+  coinDropCount: 1
   target: {fileID: 0}

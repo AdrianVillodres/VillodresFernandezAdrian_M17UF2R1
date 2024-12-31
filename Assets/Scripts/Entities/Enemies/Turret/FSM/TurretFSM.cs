@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+
 public class TurretFSM : MonoBehaviour
 {
     public List<StatesSO<TurretFSM>> states;
     public StatesSO<TurretFSM> CurrentState;
     public int HP;
+    public GameObject coin;
+    public int coinDropCount = 1;
     private Animator animator;
     private Rigidbody2D rb;
     public EnemyBulletPool eBullet;
@@ -42,6 +44,21 @@ public class TurretFSM : MonoBehaviour
         {
             animator.SetBool("Die", true);
             GoToState<DieState>();
+            DropCoins();
+        }
+    }
+
+    private void DropCoins()
+    {
+        for (int i = 0; i < coinDropCount; i++)
+        {
+            Vector3 randomPosition = transform.position + new Vector3(
+                Random.Range(-1f, 1f),
+                0.5f,
+                Random.Range(-1f, 1f)
+            );
+
+            Instantiate(coin, randomPosition, Quaternion.identity);
         }
     }
 
