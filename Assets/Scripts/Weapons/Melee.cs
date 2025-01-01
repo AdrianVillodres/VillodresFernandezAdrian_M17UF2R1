@@ -8,7 +8,6 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
     private Animator animator;
     private Collider2D swordCollider;
     private Inputs ic;
-
     private bool isAttacking = false;
 
     void Awake()
@@ -30,15 +29,9 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
         ic.Disable();
     }
 
-
-    private void Update()
-    {
-        animator.SetBool("Attack", isAttacking);
-    }
-
     private void Attack()
     {
-        isAttacking = true;
+        animator.SetBool("Attack", true);
         StartCoroutine(EnableColliderTemporarily());
     }
 
@@ -49,7 +42,6 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
             swordCollider.enabled = true;
             yield return new WaitForSeconds(0.5f);
             swordCollider.enabled = false;
-            isAttacking = false;
         }
     }
 
