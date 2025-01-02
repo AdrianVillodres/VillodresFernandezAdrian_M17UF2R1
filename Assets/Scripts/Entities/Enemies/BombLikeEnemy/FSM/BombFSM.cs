@@ -74,8 +74,7 @@ public class BombFSM : MonoBehaviour
         {
             Vector3 randomPosition = transform.position + new Vector3(
                 Random.Range(-1f, 1f),
-                0.5f,
-                Random.Range(-1f, 1f)
+                0.5f
             );
 
             Instantiate(coin, randomPosition, Quaternion.identity);

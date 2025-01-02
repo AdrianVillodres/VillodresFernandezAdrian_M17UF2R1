@@ -8,7 +8,6 @@ public class Key : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Llave recolectada");
             GameEvents.instance.KeyCollected();
             collision.GetComponent<Character>().AddKey();
             Destroy(gameObject);
