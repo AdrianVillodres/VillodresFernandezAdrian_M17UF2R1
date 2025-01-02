@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FlamethrowerController : MonoBehaviour, Inputs.IWeaponActions
+public class Flamethrower : MonoBehaviour, Inputs.IWeaponActions
 {
-    public ParticleSystem flameParticles;
+    public ParticleSystem flameParticles;  // El sistema de partículas del lanzallamas
     private Inputs ic;
 
-    private void Awake()
+    void Awake()
     {
         ic = new Inputs();
         ic.Weapon.SetCallbacks(this);
@@ -16,7 +16,6 @@ public class FlamethrowerController : MonoBehaviour, Inputs.IWeaponActions
     {
         ic.Enable();
 
-
         if (flameParticles.isPlaying)
         {
             flameParticles.Stop();
@@ -25,21 +24,7 @@ public class FlamethrowerController : MonoBehaviour, Inputs.IWeaponActions
 
     private void OnDisable()
     {
-        ic.Disable(); 
-    }
-
-    void Update()
-    {
-
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            Debug.Log("Enemigo golpeado!");
-        }
+        ic.Disable();
     }
 
     public void OnShoot(InputAction.CallbackContext context)
@@ -48,14 +33,14 @@ public class FlamethrowerController : MonoBehaviour, Inputs.IWeaponActions
         {
             if (!flameParticles.isPlaying)
             {
-                flameParticles.Play();
+                flameParticles.Play();  // Iniciar las partículas
             }
         }
         else if (context.canceled)
         {
             if (flameParticles.isPlaying)
             {
-                flameParticles.Stop();
+                flameParticles.Stop();  // Detener las partículas
             }
         }
     }

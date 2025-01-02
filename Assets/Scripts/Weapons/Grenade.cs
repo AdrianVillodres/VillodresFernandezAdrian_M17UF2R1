@@ -4,13 +4,16 @@ using UnityEngine;
 public class Grenade : MonoBehaviour
 {
     public float speed = 10f;
-    public float lifetime = 2f;
+    public float lifetime = 1f;
     public float bounciness = 0.6f;
     public PhysicsMaterial2D bounceMaterial;
+    public float explosionDuration = 1f;
+
     private Collider2D grenadeCollider;
     private Animator animator;
     private Rigidbody2D rb;
     private float lifeTimer;
+    private bool isExploding = false;
 
     void Awake()
     {
@@ -20,9 +23,11 @@ public class Grenade : MonoBehaviour
 
         if (bounceMaterial == null)
         {
-            bounceMaterial = new PhysicsMaterial2D();
-            bounceMaterial.bounciness = bounciness;
-            bounceMaterial.friction = 0f;
+            bounceMaterial = new PhysicsMaterial2D
+            {
+                bounciness = bounciness,
+                friction = 0f
+            };
         }
 
         grenadeCollider.sharedMaterial = bounceMaterial;
@@ -30,8 +35,7 @@ public class Grenade : MonoBehaviour
 
     void OnEnable()
     {
-        lifeTimer = lifetime;
-        grenadeCollider.enabled = true;
+        ResetState();
 
         if (rb != null)
         {
@@ -42,38 +46,74 @@ public class Grenade : MonoBehaviour
 
     void Update()
     {
+        if (isExploding) return;
+
         lifeTimer -= Time.deltaTime;
+
         if (lifeTimer <= 0)
         {
             StartCoroutine(Explode());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-            animator.SetBool("Explosion", true);
-            rb.freezeRotation = true;
-            StartCoroutine(Explode());
-        
-    }
-
     private IEnumerator Explode()
     {
-        grenadeCollider.enabled = false;
-        yield return new WaitForSeconds(1f);
-        animator.SetBool("Explosion", false);
-        ResetGrenade();
-    }
+        isExploding = true;
 
-    private void ResetGrenade()
-    {
+        
         if (rb != null)
         {
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
+
+
         grenadeCollider.enabled = false;
-        GrenadePool.pool.Push(gameObject);
+
+        animator.SetBool("Explosion", true);
+
+        yield return new WaitForSeconds(explosionDuration);
+        animator.SetBool("Explosion", false);
+
+        ResetGrenade();
+    }
+
+    private void ResetGrenade()
+    {
+        ResetState();
+
+        if (GrenadePool.pool != null)
+        {
+            animator.SetBool("Explosion", false);
+            GrenadePool.pool.Push(gameObject);
+        }
+        else
+        {
+            animator.SetBool("Explosion", false);
+            Destroy(gameObject);
+        }
+    }
+
+    private void ResetState()
+    {
+        lifeTimer = lifetime;
+        isExploding = false;
+
+        if (animator != null)
+        {
+            animator.SetBool("Explosion", false);
+            animator.Play("Idle", 0, 0f);
+        }
+
+        if (grenadeCollider != null)
+        {
+            grenadeCollider.enabled = true;
+        }
+
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
     }
 }

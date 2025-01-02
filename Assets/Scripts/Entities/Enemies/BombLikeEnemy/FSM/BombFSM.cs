@@ -12,11 +12,15 @@ public class BombFSM : MonoBehaviour
     public GameObject target;
     private Animator animator;
     private Rigidbody2D rb;
+    private Collider2D collider2D;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        collider2D = GetComponent<Collider2D>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -55,10 +59,12 @@ public class BombFSM : MonoBehaviour
     {
         if (HP < 1)
         {
+            collider2D.enabled = false;
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();
             DropCoins();
+            
         }
     }
 

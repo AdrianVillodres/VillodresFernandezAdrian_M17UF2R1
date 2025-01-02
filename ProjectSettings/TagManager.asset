@@ -14,6 +14,9 @@ TagManager:
   - Coin
   - Door
   - Key
+  - FlameParticle
+  - Turret
+  - Bomb
   layers:
   - Default
   - TransparentFX

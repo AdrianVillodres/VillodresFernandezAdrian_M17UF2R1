@@ -42,6 +42,8 @@ public class TurretFSM : MonoBehaviour
     {
         if (HP < 1)
         {
+
+            GetComponent<Collider2D>().enabled = false;
             animator.SetBool("Die", true);
             GoToState<DieState>();
             DropCoins();
