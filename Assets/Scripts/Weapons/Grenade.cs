@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    public float speed = 10f;
     public float lifetime = 1f;
     public float bounciness = 0.6f;
     public PhysicsMaterial2D bounceMaterial;
-    public float explosionDuration = 1f;
+    public float explosionDuration = 0.5f;
 
     private Collider2D grenadeCollider;
     private Animator animator;
@@ -40,7 +39,7 @@ public class Grenade : MonoBehaviour
         if (rb != null)
         {
             Vector2 direction = transform.right.normalized;
-            rb.velocity = direction * speed;
+            rb.velocity = direction;
         }
     }
 

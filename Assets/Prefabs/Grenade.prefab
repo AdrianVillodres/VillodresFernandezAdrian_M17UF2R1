@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4867761996002329535}
   - component: {fileID: -2700207245249748820}
   - component: {fileID: 176455610187472949}
+  - component: {fileID: -6259168191053597392}
   m_Layer: 10
   m_Name: Grenade
   m_TagString: Bullet
@@ -117,7 +118,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -135,11 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62fc1d5c8fc03e4db295afe311e1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   lifetime: 1
   bounciness: 0.6
   bounceMaterial: {fileID: 0}
-  explosionDuration: 1
+  explosionDuration: 0.5
 --- !u!50 &-2700207245249748820
 Rigidbody2D:
   serializedVersion: 4
@@ -188,3 +188,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &-6259168191053597392
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561924324993477297}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5

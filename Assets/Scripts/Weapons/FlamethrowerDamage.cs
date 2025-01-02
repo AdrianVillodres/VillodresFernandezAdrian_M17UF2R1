@@ -5,35 +5,30 @@ using static UnityEngine.GraphicsBuffer;
 
 public class FlamethrowerDamage : MonoBehaviour
 {
-    public ParticleSystem flamethrowerParticles;  // Referencia al sistema de partículas
+    public ParticleSystem flamethrowerParticles;
 
     void Start()
     {
-        // Configurar el sistema de partículas para enviar mensajes de colisión
         var collisionModule = flamethrowerParticles.collision;
         collisionModule.enabled = true;
         collisionModule.type = ParticleSystemCollisionType.World;
-        collisionModule.sendCollisionMessages = true;  // Esto habilita OnParticleCollision
+        collisionModule.sendCollisionMessages = true;
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.CompareTag("Bomb"))  // Comprobar si la colisión es con un enemigo
+        if (other.CompareTag("Bomb"))
         {
-            BombFSM bomb = other.GetComponent<BombFSM>();  // Obtener el componente BombFSM del enemigo
-
-
+            BombFSM bomb = other.GetComponent<BombFSM>();
             Debug.Log("¡Colisión con enemigo detectada!");
-            bomb.HP--;
+            bomb.HP = bomb.HP-0.1f;
             bomb.CheckIfAlive();
-
-
         }
         else if (other.CompareTag("Turret"))
         {
             TurretFSM turret = other.GetComponent<TurretFSM>();
             Debug.Log("¡Colisión con enemigo detectada!");
-            turret.HP--;
+            turret.HP = turret.HP-0.1f;
             turret.CheckIfAlive();
         }
     }

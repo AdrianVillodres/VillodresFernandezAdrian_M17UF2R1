@@ -6,7 +6,7 @@ public class BombFSM : MonoBehaviour
 {
     public List<StatesSO<BombFSM>> states;
     public StatesSO<BombFSM> CurrentState;
-    public int HP;
+    public float HP;
     public GameObject coin;
     public int coinDropCount = 1;
     public GameObject target;

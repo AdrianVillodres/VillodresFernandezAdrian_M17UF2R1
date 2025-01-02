@@ -6,7 +6,7 @@ public class TurretFSM : MonoBehaviour
 {
     public List<StatesSO<TurretFSM>> states;
     public StatesSO<TurretFSM> CurrentState;
-    public int HP;
+    public float HP;
     public GameObject coin;
     public int coinDropCount = 1;
     private Animator animator;

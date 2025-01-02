@@ -8,7 +8,7 @@ public class GrenadeShootBehaviour : MonoBehaviour, Inputs.IWeaponActions
     private Inputs ic;
     public Transform firePoint;
     public float fireRate = 0.1f;
-    public float grenadeForce = 10f;
+    public float grenadeForce;
 
     private float fireTimer = 0f;
 
