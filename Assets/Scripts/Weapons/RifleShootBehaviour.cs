@@ -45,6 +45,7 @@ public class RifleShootBehaviour : MonoBehaviour, Inputs.IWeaponActions
         if (context.performed && fireTimer <= 0)
         {
             Shoot();
+            AudioManager.audioManager.PlayShoot();
             fireTimer = fireRate;
         }
     }

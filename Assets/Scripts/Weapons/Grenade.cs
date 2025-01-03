@@ -9,7 +9,8 @@ public class Grenade : MonoBehaviour
     public float explosionDuration = 0.5f;
 
     private Collider2D grenadeCollider;
-    private Animator animator;
+    public Collider2D explosionCollider;
+    public Animator animator;
     private Rigidbody2D rb;
     private float lifeTimer;
     private bool isExploding = false;
@@ -30,6 +31,11 @@ public class Grenade : MonoBehaviour
         }
 
         grenadeCollider.sharedMaterial = bounceMaterial;
+
+        if (explosionCollider != null)
+        {
+            explosionCollider.enabled = false;
+        }
     }
 
     void OnEnable()
@@ -59,19 +65,29 @@ public class Grenade : MonoBehaviour
     {
         isExploding = true;
 
-        
         if (rb != null)
         {
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
 
-
         grenadeCollider.enabled = false;
 
+        if (explosionCollider != null)
+        {
+            explosionCollider.enabled = true;
+        }
+
         animator.SetBool("Explosion", true);
+        AudioManager.audioManager.PlayBoom();
 
         yield return new WaitForSeconds(explosionDuration);
+
+        if (explosionCollider != null)
+        {
+            explosionCollider.enabled = false;
+        }
+
         animator.SetBool("Explosion", false);
 
         ResetGrenade();
@@ -107,6 +123,11 @@ public class Grenade : MonoBehaviour
         if (grenadeCollider != null)
         {
             grenadeCollider.enabled = true;
+        }
+
+        if (explosionCollider != null)
+        {
+            explosionCollider.enabled = false;
         }
 
         if (rb != null)

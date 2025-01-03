@@ -21,6 +21,7 @@ public class ShootState : StatesSO<TurretFSM>
         if (shootTimer <= 0)
         {
             ShootPlayer(ec);
+            AudioManager.audioManager.PlayShoot();
             shootTimer = shootCooldown;
         }
         

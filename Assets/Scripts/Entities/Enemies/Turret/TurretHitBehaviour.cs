@@ -5,9 +5,11 @@ using UnityEngine;
 public class TurretHitBehaviour : MonoBehaviour
 {
     private TurretFSM turret;
+    private Grenade grenade;
     void Start()
     {
         turret = GetComponent<TurretFSM>();
+        grenade = GetComponent<Grenade>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,6 +18,10 @@ public class TurretHitBehaviour : MonoBehaviour
         {
             turret.HP--;
             turret.CheckIfAlive();
+        }
+        else if (collision.gameObject.CompareTag("grenade") && grenade.animator.GetBool("Explosion") == true)
+        {
+            turret.HP -= 2;
         }
     }
 }

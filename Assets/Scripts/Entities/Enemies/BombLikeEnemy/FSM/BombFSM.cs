@@ -62,6 +62,7 @@ public class BombFSM : MonoBehaviour
             collider2D.enabled = false;
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            AudioManager.audioManager.PlayBoom();
             GoToState<ExplodeState>();
             DropCoins();
             

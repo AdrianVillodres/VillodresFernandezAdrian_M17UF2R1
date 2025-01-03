@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
         {
             isOpen = true;
             animator.SetBool("Open", true);
+            AudioManager.audioManager.PlayDoor();
         }
     }
 }

@@ -17,6 +17,7 @@ TagManager:
   - FlameParticle
   - Turret
   - Bomb
+  - Grenade
   layers:
   - Default
   - TransparentFX
