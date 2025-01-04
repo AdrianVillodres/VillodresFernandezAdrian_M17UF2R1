@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BombFSM : MonoBehaviour
 {
@@ -14,11 +15,106 @@ public class BombFSM : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D collider2D;
 
+    public GameObject healthBarPrefab;
+    public Transform healthBarPosition;
+    private Slider healthSlider;
+    private GameObject healthBarInstance;
+    private bool healthBarVisible = false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();
+
+        if (healthBarPrefab != null && healthBarPosition != null)
+        {
+            healthBarInstance = Instantiate(healthBarPrefab, healthBarPosition.position, Quaternion.identity);
+            healthBarInstance.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            healthSlider = healthBarInstance.GetComponent<Slider>();
+            healthSlider.maxValue = HP;
+            healthSlider.value = HP;
+            healthBarInstance.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (healthBarInstance != null && healthBarVisible)
+        {
+            Vector3 screenPosition = Camera.main.WorldToScreenPoint(healthBarPosition.position);
+            healthBarInstance.transform.position = screenPosition;
+        }
+
+        CurrentState.OnStateUpdate(this);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        HP -= damage;
+        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
+
+        if (healthBarInstance != null && !healthBarVisible)
+        {
+            healthBarInstance.SetActive(true);
+            healthBarVisible = true;
+        }
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = HP;
+        }
+
+        CheckIfAlive();
+    }
+
+    public void CheckIfAlive()
+    {
+        if (HP < 1)
+        {
+            collider2D.enabled = false;
+            animator.SetBool("ColPlayer", true);
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            AudioManager.audioManager.PlayBoom();
+            GoToState<ExplodeState>();
+            DropCoins();
+
+            if (healthBarInstance != null)
+            {
+                Destroy(healthBarInstance);
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (healthBarInstance != null)
+        {
+            Destroy(healthBarInstance);
+        }
+    }
+
+    private void DropCoins()
+    {
+        for (int i = 0; i < coinDropCount; i++)
+        {
+            Vector3 randomPosition = transform.position + new Vector3(
+                Random.Range(-1f, 1f),
+                0.5f
+            );
+
+            Instantiate(coin, randomPosition, Quaternion.identity);
+        }
+    }
+
+    public void GoToState<T>() where T : StatesSO<BombFSM>
+    {
+        if (CurrentState.StatesToGo.Find(state => state is T))
+        {
+            CurrentState.OnStateExit(this);
+            CurrentState = CurrentState.StatesToGo.Find(obj => obj is T);
+            CurrentState.OnStateEnter(this);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,48 +143,6 @@ public class BombFSM : MonoBehaviour
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();
-        }
-    }
-
-    private void Update()
-    {
-        CurrentState.OnStateUpdate(this);
-    }
-
-    public void CheckIfAlive()
-    {
-        if (HP < 1)
-        {
-            collider2D.enabled = false;
-            animator.SetBool("ColPlayer", true);
-            rb.constraints = RigidbodyConstraints2D.FreezePosition;
-            AudioManager.audioManager.PlayBoom();
-            GoToState<ExplodeState>();
-            DropCoins();
-            
-        }
-    }
-
-    private void DropCoins()
-    {
-        for (int i = 0; i < coinDropCount; i++)
-        {
-            Vector3 randomPosition = transform.position + new Vector3(
-                Random.Range(-1f, 1f),
-                0.5f
-            );
-
-            Instantiate(coin, randomPosition, Quaternion.identity);
-        }
-    }
-
-    public void GoToState<T>() where T : StatesSO<BombFSM>
-    {
-        if (CurrentState.StatesToGo.Find(state => state is T))
-        {
-            CurrentState.OnStateExit(this);
-            CurrentState = CurrentState.StatesToGo.Find(obj => obj is T);
-            CurrentState.OnStateEnter(this);
         }
     }
 }

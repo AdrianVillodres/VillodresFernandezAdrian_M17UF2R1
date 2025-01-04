@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -10,9 +12,14 @@ public class Character : MonoBehaviour
 
     [Header("Atributos")]
     public float speed;
-    public int HP;
+    public int HP = 5;
     public int gold = 0;
     public int keys = 0;
+
+    [Header("UI Elementos")]
+    public Slider healthSlider;
+    public TextMeshProUGUI Gold;
+    public TextMeshProUGUI Keys;
 
     void Start()
     {
@@ -33,6 +40,18 @@ public class Character : MonoBehaviour
         {
             GameEvents.instance.OnDoorInteracted += CheckKeysForDoor;
         }
+
+
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = 5;
+            healthSlider.minValue = 0;
+            healthSlider.value = HP;
+        }
+
+
+        UpdateGoldText();
+        UpdateKeysText();
     }
 
     private void OnDestroy()
@@ -43,20 +62,17 @@ public class Character : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void AddGold()
     {
         gold++;
+        UpdateGoldText();
         Debug.Log("Oro actual: " + gold);
     }
 
     public void AddKey()
     {
         keys++;
+        UpdateKeysText();
         Debug.Log("Llaves actuales: " + keys);
     }
 
@@ -65,6 +81,7 @@ public class Character : MonoBehaviour
         if (keys >= keysRequired)
         {
             keys -= keysRequired;
+            UpdateKeysText();
             Debug.Log($"Puerta abierta, llaves restantes: {keys}");
             onSuccess?.Invoke();
         }
@@ -88,7 +105,32 @@ public class Character : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bullet"))
         {
             HP--;
+            UpdateHealthBar();
             CheckIfAlive();
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = HP;
+        }
+    }
+
+    private void UpdateGoldText()
+    {
+        if (Gold != null)
+        {
+            Gold.text = "Oro: " + gold;
+        }
+    }
+
+    private void UpdateKeysText()
+    {
+        if (Keys != null)
+        {
+            Keys.text = "Llaves: " + keys;
         }
     }
 }

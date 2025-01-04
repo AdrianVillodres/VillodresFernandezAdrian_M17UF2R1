@@ -16,7 +16,7 @@ public class FlamethrowerDamage : MonoBehaviour
         if (other.CompareTag("Bomb"))
         {
             BombFSM bomb = other.GetComponent<BombFSM>();
-            bomb.HP = bomb.HP-0.05f;
+            bomb.TakeDamage(0.05f);
             bomb.CheckIfAlive();
         }
         else if (other.CompareTag("Turret"))

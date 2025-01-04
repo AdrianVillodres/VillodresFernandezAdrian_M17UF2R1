@@ -17,11 +17,11 @@ public class HitBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sword") || collision.gameObject.CompareTag("Bullet"))
         {
-            bomb.HP--;
-            bomb.CheckIfAlive(); 
-        }else if (collision.gameObject.CompareTag("grenade") && grenade.animator.GetBool("Explosion") == true)
+            bomb.TakeDamage(1);
+        }
+        else if (collision.gameObject.CompareTag("grenade") && grenade.animator.GetBool("Explosion") == true)
         {
-            bomb.HP -= 2;
+            bomb.TakeDamage(2);
         }
     }
 }
