@@ -6,7 +6,6 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        
         ActivateWeapon(0);
     }
     public void ActivateWeapon(int index)

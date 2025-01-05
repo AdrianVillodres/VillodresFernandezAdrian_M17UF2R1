@@ -16,12 +16,11 @@ public class TurretHitBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sword") || collision.gameObject.CompareTag("Bullet"))
         {
-            turret.HP--;
-            turret.CheckIfAlive();
+            turret.TakeDamage(1);
         }
-        else if (collision.gameObject.CompareTag("grenade") && grenade.animator.GetBool("Explosion") == true)
+        else if (collision.gameObject.CompareTag("Grenade") && collision.gameObject.GetComponent<Animator>().GetBool("Explosion"))
         {
-            turret.HP -= 2;
+            turret.TakeDamage(2);
         }
     }
 }

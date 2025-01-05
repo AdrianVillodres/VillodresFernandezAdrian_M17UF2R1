@@ -14,11 +14,7 @@ public class BombFSM : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     private Collider2D collider2D;
-
-    public GameObject healthBarPrefab;
-    public Transform healthBarPosition;
     private Slider healthSlider;
-    private GameObject healthBarInstance;
     private bool healthBarVisible = false;
 
     private void Start()
@@ -26,26 +22,11 @@ public class BombFSM : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();
-
-        if (healthBarPrefab != null && healthBarPosition != null)
-        {
-            healthBarInstance = Instantiate(healthBarPrefab, healthBarPosition.position, Quaternion.identity);
-            healthBarInstance.transform.SetParent(GameObject.Find("Canvas").transform, false);
-            healthSlider = healthBarInstance.GetComponent<Slider>();
-            healthSlider.maxValue = HP;
-            healthSlider.value = HP;
-            healthBarInstance.SetActive(false);
-        }
+        healthSlider = GetComponentInChildren<Slider>();
     }
 
     private void Update()
     {
-        if (healthBarInstance != null && healthBarVisible)
-        {
-            Vector3 screenPosition = Camera.main.WorldToScreenPoint(healthBarPosition.position);
-            healthBarInstance.transform.position = screenPosition;
-        }
-
         CurrentState.OnStateUpdate(this);
     }
 
@@ -53,12 +34,6 @@ public class BombFSM : MonoBehaviour
     {
         HP -= damage;
         HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
-
-        if (healthBarInstance != null && !healthBarVisible)
-        {
-            healthBarInstance.SetActive(true);
-            healthBarVisible = true;
-        }
 
         if (healthSlider != null)
         {
@@ -78,21 +53,9 @@ public class BombFSM : MonoBehaviour
             AudioManager.audioManager.PlayBoom();
             GoToState<ExplodeState>();
             DropCoins();
-
-            if (healthBarInstance != null)
-            {
-                Destroy(healthBarInstance);
-            }
         }
     }
 
-    private void OnDestroy()
-    {
-        if (healthBarInstance != null)
-        {
-            Destroy(healthBarInstance);
-        }
-    }
 
     private void DropCoins()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurretFSM : MonoBehaviour
 {
@@ -12,12 +13,29 @@ public class TurretFSM : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     public EnemyBulletPool eBullet;
+    private Slider healthSlider;
+    private bool healthBarVisible = false;
 
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        healthSlider = GetComponentInChildren<Slider>();
     }
+
+    public void TakeDamage(float damage)
+    {
+        HP -= damage;
+        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = HP;
+        }
+
+        CheckIfAlive();
+    }
+
     private void Update()
     {
         CurrentState.OnStateUpdate(this);

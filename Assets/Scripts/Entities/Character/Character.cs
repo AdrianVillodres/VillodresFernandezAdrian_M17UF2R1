@@ -9,12 +9,14 @@ public class Character : MonoBehaviour
 {
     public static Character character;
     private Animator animator;
+    private Inventory inventory;
 
     [Header("Atributos")]
     public float speed;
     public int HP = 5;
     public int gold = 0;
     public int keys = 0;
+
 
     [Header("UI Elementos")]
     public Slider healthSlider;
@@ -23,35 +25,36 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-
         if (character == null)
         {
             character = this;
             DontDestroyOnLoad(gameObject);
+            animator = GetComponent<Animator>();
+            inventory = GetComponent<Inventory>();
+
+            if (GameEvents.instance != null)
+            {
+                GameEvents.instance.OnDoorInteracted += CheckKeysForDoor;
+            }
+
+
+            if (healthSlider != null)
+            {
+                healthSlider.maxValue = 5;
+                healthSlider.minValue = 0;
+                healthSlider.value = HP;
+            }
+
+
+            UpdateGoldText();
+            UpdateKeysText();
+
         }
         else
         {
             Destroy(gameObject);
             return;
         }
-
-        if (GameEvents.instance != null)
-        {
-            GameEvents.instance.OnDoorInteracted += CheckKeysForDoor;
-        }
-
-
-        if (healthSlider != null)
-        {
-            healthSlider.maxValue = 5;
-            healthSlider.minValue = 0;
-            healthSlider.value = HP;
-        }
-
-
-        UpdateGoldText();
-        UpdateKeysText();
     }
 
     private void OnDestroy()
