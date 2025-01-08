@@ -45,7 +45,7 @@ public class BombFSM : MonoBehaviour
 
     public void CheckIfAlive()
     {
-        if (HP < 1)
+        if (HP < 0.1f)
         {
             collider2D.enabled = false;
             animator.SetBool("ColPlayer", true);

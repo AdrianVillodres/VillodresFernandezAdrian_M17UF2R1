@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Flamethrower : MonoBehaviour, Inputs.IWeaponActions
 {
-    public ParticleSystem flameParticles;  // El sistema de partículas del lanzallamas
+    public ParticleSystem flameParticles;
     private Inputs ic;
 
     void Awake()
@@ -33,14 +33,14 @@ public class Flamethrower : MonoBehaviour, Inputs.IWeaponActions
         {
             if (!flameParticles.isPlaying)
             {
-                flameParticles.Play();  // Iniciar las partículas
+                flameParticles.Play();
             }
         }
         else if (context.canceled)
         {
             if (flameParticles.isPlaying)
             {
-                flameParticles.Stop();  // Detener las partículas
+                flameParticles.Stop();
             }
         }
     }

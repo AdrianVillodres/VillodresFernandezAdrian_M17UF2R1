@@ -25,6 +25,7 @@ public class BRifle : MonoBehaviour
             if (Character.character.gold >= value)
             {
                 Character.character.gold = Character.character.gold - value;
+                purchased = true;
                 Destroy(gameObject);
                 Debug.Log("Comprar");
             }

@@ -9,6 +9,7 @@ public class WeaponSwitching : MonoBehaviour
 
     private int currentWeaponIndex = 0;
     private Inputs playerInputs;
+    public BRifle brifle;
 
     void Awake()
     {
@@ -41,7 +42,11 @@ public class WeaponSwitching : MonoBehaviour
                 SwitchWeapon(0);
                 break;
             case "2":
-                SwitchWeapon(1);
+                if(brifle.purchased == true)
+                {
+                    SwitchWeapon(1);
+                    Debug.Log("entro y cambio");
+                }
                 break;
             case "3":
                 SwitchWeapon(2);

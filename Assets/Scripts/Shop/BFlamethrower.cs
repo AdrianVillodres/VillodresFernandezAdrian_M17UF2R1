@@ -26,6 +26,7 @@ public class BFlamethrower : MonoBehaviour
             {
                 Character.character.gold = Character.character.gold - value;
                 Destroy(gameObject);
+                purchased = true;
                 Debug.Log("Comprar");
             }
         }
