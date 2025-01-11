@@ -19,22 +19,15 @@ public class DungeonGenerator : MonoBehaviour
         RoomController.instance.LoadRoom("Start", 0, 0);
         foreach(Vector2Int roomLocation in rooms)
         {
-            if(roomLocation == dungeonRooms[dungeonRooms.Count - 1] && !(roomLocation == Vector2Int.zero))
+            if(counter == 2)
             {
-                RoomController.instance.LoadRoom("End", roomLocation.x, roomLocation.y);
+                RoomController.instance.LoadRoom("Shop", roomLocation.x, roomLocation.y);
+                counter++;
             }
             else
             {
-                if(counter == 2)
-                {
-                    RoomController.instance.LoadRoom("Shop", roomLocation.x, roomLocation.y);
-                    counter++;
-                }
-                else
-                {
-                    RoomController.instance.LoadRoom("Empty", roomLocation.x, roomLocation.y);
-                    counter++;
-                }
+                RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y);
+                counter++;
             }
         }
     }

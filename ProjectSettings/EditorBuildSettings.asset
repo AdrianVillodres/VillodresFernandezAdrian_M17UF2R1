@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevelStart.unity
+    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevel/FirstLevelStart.unity
     guid: 6218c50c7bcfe014d8b70ae20431e949
   - enabled: 1
     path: Assets/Scenes/Menus/MainMenu.unity
@@ -24,15 +24,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Inventory.unity
     guid: 71fec4f6b148826428074c01cb7acd18
   - enabled: 1
-    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevelMain.unity
+    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevel/FirstLevelMain.unity
     guid: 291745de4508dc249a52113c2da36558
   - enabled: 1
-    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevelEmpty.unity
+    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevel/FirstLevelEmpty.unity
     guid: c287c6c08db9be54aac0513bb6d084dd
   - enabled: 1
-    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevelEnd.unity
+    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevel/FirstLevelEnd.unity
     guid: b0b07228f2fedf346912b843c76565e8
   - enabled: 1
-    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevelShop.unity
+    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevel/FirstLevelShop.unity
     guid: 23a827b628a66fb4f9f8ca755c514403
+  - enabled: 1
+    path: Assets/ProceduralWorldGeneration/GenerationScenes/FirstLevel/FirstLevelBasic1.unity
+    guid: 45c96b1474e548a4f85b7183545fbf52
   m_configObjects: {}

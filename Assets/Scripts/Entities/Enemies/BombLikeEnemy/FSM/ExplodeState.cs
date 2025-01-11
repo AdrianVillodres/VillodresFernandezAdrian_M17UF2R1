@@ -9,7 +9,6 @@ public class ExplodeState : StatesSO<BombFSM>
 {
     public override void OnStateEnter(BombFSM ec)
     {
-        
     }
 
     public override void OnStateExit(BombFSM ec)

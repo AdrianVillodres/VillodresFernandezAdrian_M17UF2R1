@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ public class BombFSM : MonoBehaviour
     private Slider healthSlider;
     private bool healthBarVisible = false;
 
+    public bool notInRoom = false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -27,7 +30,10 @@ public class BombFSM : MonoBehaviour
 
     private void Update()
     {
-        CurrentState.OnStateUpdate(this);
+        if (!notInRoom)
+        {
+            CurrentState.OnStateUpdate(this); 
+        }
     }
 
     public void TakeDamage(float damage)

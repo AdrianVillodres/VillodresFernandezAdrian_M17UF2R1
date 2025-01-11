@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 157175450}
   - component: {fileID: 157175453}
   - component: {fileID: 157175454}
+  - component: {fileID: 157175455}
+  - component: {fileID: 157175456}
   m_Layer: 0
   m_Name: Character_Down_0
   m_TagString: Untagged
@@ -269,7 +271,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4585aa15572a7cf4a82254d3d3bb5897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  ipMove: {x: 0, y: 0}
+--- !u!114 &157175455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157175449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3c7727ca2c8404c89bb4072c22592f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157175456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157175449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413375fc148c71d42964e708f602cda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  HP: 5
+  gold: 0
+  keys: 0
+  healthSlider: {fileID: 0}
+  Gold: {fileID: 0}
+  Keys: {fileID: 0}
 --- !u!1 &1951112071
 GameObject:
   m_ObjectHideFlags: 0

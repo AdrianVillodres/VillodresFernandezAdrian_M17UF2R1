@@ -13,6 +13,14 @@ public class Room : MonoBehaviour
 
     public int Y;
 
+    private bool updatedDoors = false;
+
+    public Room(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
     public DoorC leftDoor;
 
     public DoorC rightDoor;
@@ -55,6 +63,15 @@ public class Room : MonoBehaviour
         
 
         RoomController.instance.RegisterRoom(this);
+    }
+
+    void Update()
+    {
+        if(name.Contains("end") && !updatedDoors)
+        {
+            RemoveUnconnectedDoors();
+            updatedDoors = true;
+        }
     }
 
 
