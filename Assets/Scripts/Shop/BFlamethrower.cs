@@ -5,7 +5,7 @@ using UnityEngine;
 public class BFlamethrower : MonoBehaviour
 {
     Character character;
-    int value = 40;
+    int value = 5;
     public bool purchased = false;
     void Start()
     {

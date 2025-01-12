@@ -5,7 +5,7 @@ using UnityEngine;
 public class BGrenadeLauncher : MonoBehaviour
 {
     Character character;
-    int value = 30;
+    int value = 2;
     public bool purchased = false;
     void Start()
     {

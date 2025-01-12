@@ -5,7 +5,7 @@ using UnityEngine;
 public class BRifle : MonoBehaviour
 {
     Character character;
-    int value = 20;
+    int value = 1;
     public bool purchased = false;
     void Start()
     {

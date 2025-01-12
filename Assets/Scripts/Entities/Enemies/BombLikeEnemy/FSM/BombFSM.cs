@@ -58,12 +58,12 @@ public class BombFSM : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             AudioManager.audioManager.PlayBoom();
             GoToState<ExplodeState>();
-            DropCoins();
+            Drop();
         }
     }
 
 
-    private void DropCoins()
+    private void Drop()
     {
         for (int i = 0; i < coinDropCount; i++)
         {

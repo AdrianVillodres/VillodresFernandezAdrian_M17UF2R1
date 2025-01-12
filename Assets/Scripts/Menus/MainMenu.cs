@@ -26,4 +26,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void DirButton()
+    {
+        SceneManager.LoadSceneAsync("8-directionCharacter");
+    }
 }
