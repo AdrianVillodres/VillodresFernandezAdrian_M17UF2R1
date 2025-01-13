@@ -30,6 +30,10 @@ public class Bullet : MonoBehaviour
         {
             BulletPool.pool.Push(gameObject);
         }
-        
+        if (collision.gameObject.TryGetComponent<IHurteable>(out var enemy))
+        {
+            enemy.Hurt(1);
+        }
+
     }
 }

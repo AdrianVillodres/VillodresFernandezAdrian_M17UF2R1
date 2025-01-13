@@ -84,19 +84,31 @@ public class Room : MonoBehaviour
             {
                 case DoorC.DoorType.right:
                     if(GetRight() == null)
+                    {
+                        door.gameObject.GetComponent<DoorC>().wallColliderHide.SetActive(true);
                         door.gameObject.SetActive(false);
+                    }
                     break;
                 case DoorC.DoorType.left:
                     if (GetLeft() == null)
+                    {
+                        door.gameObject.GetComponent<DoorC>().wallColliderHide.SetActive(true);
                         door.gameObject.SetActive(false);
+                    }
                     break;
                 case DoorC.DoorType.top:
                     if (GetTop() == null)
+                    {
+                        door.gameObject.GetComponent<DoorC>().wallColliderHide.SetActive(true);
                         door.gameObject.SetActive(false);
+                    }
                     break;
                 case DoorC.DoorType.bottom:
                     if (GetBottom() == null)
+                    {
+                        door.gameObject.GetComponent<DoorC>().wallColliderHide.SetActive(true);
                         door.gameObject.SetActive(false);
+                    }
                     break;
             }
         }

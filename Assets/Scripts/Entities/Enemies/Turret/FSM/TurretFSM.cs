@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TurretFSM : MonoBehaviour
+public class TurretFSM : MonoBehaviour, IHurteable
 {
     public List<StatesSO<TurretFSM>> states;
     public StatesSO<TurretFSM> CurrentState;
@@ -23,18 +23,6 @@ public class TurretFSM : MonoBehaviour
         healthSlider = GetComponentInChildren<Slider>();
     }
 
-    public void TakeDamage(float damage)
-    {
-        HP -= damage;
-        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
-
-        if (healthSlider != null)
-        {
-            healthSlider.value = HP;
-        }
-
-        CheckIfAlive();
-    }
 
     private void Update()
     {
@@ -90,5 +78,17 @@ public class TurretFSM : MonoBehaviour
             CurrentState = CurrentState.StatesToGo.Find(obj => obj is T);
             CurrentState.OnStateEnter(this);
         }
+    }
+
+    public void Hurt(float damage)
+    {
+        HP -= damage;
+        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = HP;
+        }
+        CheckIfAlive();
     }
 }

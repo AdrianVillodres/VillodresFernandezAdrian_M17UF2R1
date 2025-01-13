@@ -6,15 +6,18 @@ public class WeaponSwitching : MonoBehaviour
 {
     [Header("Lista de Armas")]
     public List<GameObject> weapons;
-
+    public static WeaponSwitching weapon;
     private int currentWeaponIndex = 0;
     private Inputs playerInputs;
     public BRifle brifle;
+    public bool riflepurchased = false;
+    public bool flamepurchased = false;
+    public bool grenadepurchased = false;
 
     void Awake()
     {
         playerInputs = new Inputs();
-
+        brifle = GetComponent<BRifle>();
         playerInputs.Weapon.Change.performed += OnChange;
     }
 
@@ -42,7 +45,7 @@ public class WeaponSwitching : MonoBehaviour
                 SwitchWeapon(0);
                 break;
             case "2":
-                if(brifle.purchased == true)
+                if(riflepurchased == true)
                 {
                     SwitchWeapon(1);
                     Debug.Log("entro y cambio");

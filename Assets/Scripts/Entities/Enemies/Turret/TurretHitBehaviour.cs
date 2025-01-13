@@ -14,13 +14,17 @@ public class TurretHitBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Sword") || collision.gameObject.CompareTag("Bullet"))
+
+        
+    }
+
+
+    /*if (collision.gameObject.CompareTag("Sword") || collision.gameObject.CompareTag("Bullet"))
         {
-            turret.TakeDamage(1);
+            
         }
         else if (collision.gameObject.CompareTag("Grenade") && collision.gameObject.GetComponent<Animator>().GetBool("Explosion"))
         {
             turret.TakeDamage(2);
-        }
-    }
+        }*/
 }

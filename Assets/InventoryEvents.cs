@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 public class InventoryEvents : MonoBehaviour
 {
     private Inventory inventory;
+    private ShopManager shopManager;
+
     private void Start()
     {
+        shopManager = FindObjectOfType<ShopManager>();
+        if (shopManager == null)
+        {
+            Debug.LogError("No se encontró ShopManager en la escena.");
+        }
+
         activateSword(0);
     }
-
 
     void Update()
     {
@@ -18,7 +25,7 @@ public class InventoryEvents : MonoBehaviour
         {
             Time.timeScale = 1;
             SceneManager.UnloadSceneAsync("Inventory");
-            PauseBehaviour.Pause = false;
+            InputManager.Pause = false;
         }
     }
 
@@ -29,7 +36,14 @@ public class InventoryEvents : MonoBehaviour
 
     public void activateRifle(int index)
     {
-        inventory.weapons[index].SetActive(index == 1);
+        if (shopManager != null && shopManager.riflepurchased)
+        {
+            inventory.weapons[index].SetActive(index == 1);
+        }
+        else
+        {
+            Debug.Log("El rifle no ha sido comprado aún.");
+        }
     }
 
     public void activateGrenadeLauncher(int index)

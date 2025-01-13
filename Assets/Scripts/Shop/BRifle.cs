@@ -4,30 +4,35 @@ using UnityEngine;
 
 public class BRifle : MonoBehaviour
 {
-    Character character;
-    int value = 1;
-    public bool purchased = false;
+    public int value = 1;
+    private ShopManager shopManager;
+
     void Start()
     {
-        
+        shopManager = FindObjectOfType<ShopManager>();
+        if (shopManager == null)
+        {
+            Debug.LogError("No se encontró ShopManager en la escena.");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             if (Character.character.gold >= value)
             {
-                Character.character.gold = Character.character.gold - value;
-                purchased = true;
+                Character.character.gold -= value;
+                if (shopManager != null)
+                {
+                    shopManager.riflepurchased = true;
+                }
                 Destroy(gameObject);
-                Debug.Log("Comprar");
+                Debug.Log("Rifle comprado.");
+            }
+            else
+            {
+                Debug.Log("No hay suficiente oro para comprar el rifle.");
             }
         }
     }

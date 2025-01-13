@@ -15,15 +15,4 @@ public class HitBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Sword") || collision.gameObject.CompareTag("Bullet"))
-        {
-            bomb.TakeDamage(1);
-        }
-        else if (collision.gameObject.CompareTag("Grenade") && collision.gameObject.GetComponent<Animator>().GetBool("Explosion"))
-        {
-            bomb.TakeDamage(2);
-        }
-    }
 }

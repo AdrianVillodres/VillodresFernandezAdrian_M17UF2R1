@@ -9,6 +9,8 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
     private Collider2D swordCollider;
     private Inputs ic;
     private bool isAttacking = false;
+    private float pushForce = 10f;
+
 
     void Awake()
     {
@@ -47,10 +49,18 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bomb") || other.CompareTag("Turret"))
+        if(other.gameObject.TryGetComponent<IHurteable>(out var enemy))
         {
-            Debug.Log("Enemigo golpeado!");
+            enemy.Hurt(1);
+            push(transform.position, other.GetComponent<Rigidbody2D>());
         }
+    }
+
+    public void push(Vector2 origin, Rigidbody2D target)
+    {
+        if (target == null) return;
+        Vector2 pushDirection = (target.position - origin).normalized;
+        target.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
     }
 
     public void OnShoot(InputAction.CallbackContext context)

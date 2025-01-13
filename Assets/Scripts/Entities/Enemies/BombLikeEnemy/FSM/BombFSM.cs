@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BombFSM : MonoBehaviour
+public class BombFSM : MonoBehaviour, IHurteable
 {
     public List<StatesSO<BombFSM>> states;
     public StatesSO<BombFSM> CurrentState;
@@ -36,26 +36,14 @@ public class BombFSM : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
-    {
-        HP -= damage;
-        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
-
-        if (healthSlider != null)
-        {
-            healthSlider.value = HP;
-        }
-
-        CheckIfAlive();
-    }
-
     public void CheckIfAlive()
     {
-        if (HP < 0.1f)
+        if (HP < 0.5f)
         {
             collider2D.enabled = false;
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             AudioManager.audioManager.PlayBoom();
             GoToState<ExplodeState>();
             Drop();
@@ -113,5 +101,17 @@ public class BombFSM : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();
         }
+    }
+
+    public void Hurt(float damage)
+    {
+        HP -= damage;
+        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = HP;
+        }
+        CheckIfAlive();
     }
 }

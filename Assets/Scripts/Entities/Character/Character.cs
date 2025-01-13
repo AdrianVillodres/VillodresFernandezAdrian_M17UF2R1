@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, IHurteable
 {
     public static Character character;
     private Animator animator;
     private Inventory inventory;
+    public bool isPaused;
+    public bool inInventory;
 
     [Header("Atributos")]
     public float speed;
-    public int HP = 5;
+    public float HP = 5;
     public int gold = 0;
     public int keys = 0;
 
@@ -100,16 +103,8 @@ public class Character : MonoBehaviour
         {
             animator.SetBool("Die", true);
             Debug.Log("El personaje ha muerto.");
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bullet"))
-        {
-            HP--;
-            UpdateHealthBar();
-            CheckIfAlive();
+            gameObject.SetActive(false);
+            SceneManager.LoadSceneAsync("DeathMenu");
         }
     }
 
@@ -135,5 +130,12 @@ public class Character : MonoBehaviour
         {
             Keys.text = "Llaves: " + keys;
         }
+    }
+
+    public void Hurt(float damage)
+    {
+        HP -= damage;
+        UpdateHealthBar();
+        CheckIfAlive();
     }
 }

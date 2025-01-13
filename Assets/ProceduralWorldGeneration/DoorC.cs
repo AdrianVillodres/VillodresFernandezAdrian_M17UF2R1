@@ -13,6 +13,8 @@ public class DoorC : MonoBehaviour
 
     public GameObject doorCollider;
 
+    public GameObject wallColliderHide;
+
     private GameObject player;
 
     private float widthOffset = 4f;

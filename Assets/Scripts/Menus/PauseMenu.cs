@@ -6,10 +6,11 @@ using static Unity.Collections.Unicode;
 
 public class PauseMenu : MonoBehaviour
 {
+    Character character;
     // Start is called before the first frame update
     void Start()
     {
-
+        character = GetComponent<Character>();
     }
 
     // Update is called once per frame
@@ -23,9 +24,9 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeButton()
     {
-        Time.timeScale = 1;
         SceneManager.UnloadSceneAsync("PauseMenu");
-        PauseBehaviour.Pause = false;
+        Time.timeScale = 1;
+        InputManager.Pause = false;
     }
 
     public void RestartButton()

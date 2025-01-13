@@ -392,7 +392,6 @@ GameObject:
   - component: {fileID: 7742190754819563113}
   - component: {fileID: 7495003251792139711}
   - component: {fileID: 2929854756389669386}
-  - component: {fileID: 5378127086597381329}
   - component: {fileID: 6248506368555446185}
   m_Layer: 8
   m_Name: Bomb
@@ -600,18 +599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
---- !u!114 &5378127086597381329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4159564963972052933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cc3e071bf3ff7c4cb6452bd533be605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6248506368555446185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +618,6 @@ MonoBehaviour:
   CurrentState: {fileID: 11400000, guid: b61ca913cbd855d46ab729d116feeb4c, type: 2}
   HP: 5
   coin: {fileID: 1053979388816891220, guid: 0ce81093183ee6b489af1e2c91b57d58, type: 3}
-  key: {fileID: 356180288338223597, guid: 6f1196d2bfef3904f824435711d52425, type: 3}
   coinDropCount: 1
   target: {fileID: 0}
   notInRoom: 0

@@ -6,7 +6,7 @@ public class Grenade : MonoBehaviour
     public float lifetime = 1f;
     public float bounciness = 0.6f;
     public PhysicsMaterial2D bounceMaterial;
-    public float explosionDuration = 0.5f;
+    public float explosionDuration = 2f;
 
     private Collider2D grenadeCollider;
     public Collider2D explosionCollider;
@@ -14,6 +14,7 @@ public class Grenade : MonoBehaviour
     private Rigidbody2D rb;
     private float lifeTimer;
     private bool isExploding = false;
+    private float pushForce = 0.5f;
 
     void Awake()
     {
@@ -135,5 +136,25 @@ public class Grenade : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<IHurteable>(out var enemy))
+        {
+            enemy.Hurt(1);
+            push(transform.position, collision.gameObject.GetComponent<Rigidbody2D>());
+        }
+    }
+
+    public void push(Vector2 origin, Rigidbody2D target)
+    {
+        if (target == null) return;
+
+        
+        Vector2 pushDirection = (target.position - origin).normalized;
+
+        
+        target.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
     }
 }

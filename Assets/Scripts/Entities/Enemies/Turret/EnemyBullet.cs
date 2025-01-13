@@ -10,7 +10,6 @@ public class EnemyBullet : MonoBehaviour
     private void Start()
     {
         pool = GameObject.Find("Shoots").GetComponent<EnemyBulletPool>();
-        
     }
 
     void OnEnable()
@@ -36,11 +35,10 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.TryGetComponent<IHurteable>(out var player) && collision.gameObject.CompareTag("Player"))
         {
-            //daño a jugador
+            player.Hurt(1);
         }
         gameObject.SetActive(false);
-        pool.Push(gameObject);
     }
 }
