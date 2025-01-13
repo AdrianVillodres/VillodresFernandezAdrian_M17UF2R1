@@ -48,11 +48,25 @@ public class InventoryEvents : MonoBehaviour
 
     public void activateGrenadeLauncher(int index)
     {
-        inventory.weapons[index].SetActive(index == 2);
+        if (shopManager != null && shopManager.grenadepurchased)
+        {
+            inventory.weapons[index].SetActive(index == 2);
+        }
+        else
+        {
+            Debug.Log("El lanzagranadas no ha sido comprado aún.");
+        }
     }
 
     public void activateFlamethrower(int index)
     {
-        inventory.weapons[index].SetActive(index == 3);
+        if (shopManager != null && shopManager.flamepurchased)
+        {
+            inventory.weapons[index].SetActive(index == 3);
+        }
+        else
+        {
+            Debug.Log("El lanzallamas no ha sido comprado aún.");
+        }
     }
 }

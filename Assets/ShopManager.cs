@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public bool riflepurchased = false;
+    public bool grenadepurchased = false;
+    public bool flamepurchased = false;
     void Start()
     {
         
