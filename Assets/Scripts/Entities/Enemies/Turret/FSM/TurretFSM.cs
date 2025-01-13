@@ -8,7 +8,7 @@ public class TurretFSM : MonoBehaviour, IHurteable
     public List<StatesSO<TurretFSM>> states;
     public StatesSO<TurretFSM> CurrentState;
     public float HP;
-    public GameObject coin;
+    public GameObject key;
     public int coinDropCount = 1;
     private Animator animator;
     private Rigidbody2D rb;
@@ -66,7 +66,7 @@ public class TurretFSM : MonoBehaviour, IHurteable
                 Random.Range(-1f, 1f)
             );
 
-            Instantiate(coin, randomPosition, Quaternion.identity);
+            Instantiate(key, randomPosition, Quaternion.identity);
         }
     }
 
