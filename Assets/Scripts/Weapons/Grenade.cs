@@ -140,9 +140,9 @@ public class Grenade : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<IHurteable>(out var enemy))
+        if (collision.gameObject.TryGetComponent<IHurteable>(out var enemy) && animator.GetBool("Explosion"))
         {
-            enemy.Hurt(1);
+            enemy.Hurt(2);
             push(transform.position, collision.gameObject.GetComponent<Rigidbody2D>());
         }
     }
