@@ -23,6 +23,7 @@ public class BGrenadeLauncher : MonoBehaviour
             if (Character.character.gold >= value)
             {
                 Character.character.gold -= value;
+                Character.character.UpdateGoldText();
                 if (shopManager != null)
                 {
                     shopManager.grenadepurchased = true;

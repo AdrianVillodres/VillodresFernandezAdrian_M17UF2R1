@@ -177,7 +177,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 4
 --- !u!1 &1891627811799899383
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb1449eac05d7b945adf005e1cf2b99f, type: 2}
   CurrentState: {fileID: 11400000, guid: e9ca140050d11194d8a84f34470ee92a, type: 2}
   HP: 10
-  coin: {fileID: 1053979388816891220, guid: 0ce81093183ee6b489af1e2c91b57d58, type: 3}
+  key: {fileID: 0}
   coinDropCount: 1
   eBullet: {fileID: 7639496278112038731}
 --- !u!1 &9128354548881495605

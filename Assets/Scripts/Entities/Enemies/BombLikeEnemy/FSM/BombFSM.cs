@@ -97,6 +97,10 @@ public class BombFSM : MonoBehaviour, IHurteable
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (collision.gameObject.TryGetComponent<IHurteable>(out var player))
+            {
+                player.Hurt(1);
+            }
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();

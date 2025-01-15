@@ -53,11 +53,11 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
         if(other.gameObject.TryGetComponent<IHurteable>(out var enemy))
         {
             enemy.Hurt(1);
-            push(transform.position, other.GetComponent<Rigidbody2D>());
+            Push(transform.position, other.GetComponent<Rigidbody2D>());
         }
     }
 
-    public void push(Vector2 origin, Rigidbody2D target)
+    public void Push(Vector2 origin, Rigidbody2D target)
     {
         if (target == null) return;
         Vector2 pushDirection = (target.position - origin).normalized;

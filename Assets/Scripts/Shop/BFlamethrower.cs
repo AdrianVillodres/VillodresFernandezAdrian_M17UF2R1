@@ -23,6 +23,7 @@ public class BFlamethrower : MonoBehaviour
             if (Character.character.gold >= value)
             {
                 Character.character.gold -= value;
+                Character.character.UpdateGoldText();
                 if (shopManager != null)
                 {
                     shopManager.flamepurchased = true;

@@ -53,7 +53,6 @@ public class InputManager : MonoBehaviour, Inputs.IPlayerActions
         if (context.started)
         {
             Time.timeScale = 0;
-            Character.character.gameObject.SetActive(false);
             Pause = true;
             SceneManager.LoadScene("Inventory", LoadSceneMode.Additive);
         }

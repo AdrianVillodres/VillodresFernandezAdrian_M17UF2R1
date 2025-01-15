@@ -11,12 +11,13 @@ public class InventoryEvents : MonoBehaviour
     private void Start()
     {
         shopManager = FindObjectOfType<ShopManager>();
+        inventory = Character.character.GetComponent<Inventory>();
         if (shopManager == null)
         {
             Debug.LogError("No se encontró ShopManager en la escena.");
         }
 
-        activateSword(0);
+        ActivateSword(0);
     }
 
     void Update()
@@ -29,16 +30,20 @@ public class InventoryEvents : MonoBehaviour
         }
     }
 
-    public void activateSword(int index)
+    public void ActivateSword(int index)
     {
+        DesactivateWeapon(inventory.currentWeaponIndex);
         inventory.weapons[index].SetActive(index == 0);
+        inventory.currentWeaponIndex = index;
     }
 
-    public void activateRifle(int index)
+    public void ActivateRifle(int index)
     {
         if (shopManager != null && shopManager.riflepurchased)
         {
+            DesactivateWeapon(inventory.currentWeaponIndex);
             inventory.weapons[index].SetActive(index == 1);
+            inventory.currentWeaponIndex = index;
         }
         else
         {
@@ -46,11 +51,13 @@ public class InventoryEvents : MonoBehaviour
         }
     }
 
-    public void activateGrenadeLauncher(int index)
+    public void ActivateGrenadeLauncher(int index)
     {
         if (shopManager != null && shopManager.grenadepurchased)
         {
+            DesactivateWeapon(inventory.currentWeaponIndex);
             inventory.weapons[index].SetActive(index == 2);
+            inventory.currentWeaponIndex = index;
         }
         else
         {
@@ -58,15 +65,22 @@ public class InventoryEvents : MonoBehaviour
         }
     }
 
-    public void activateFlamethrower(int index)
+    public void ActivateFlamethrower(int index)
     {
         if (shopManager != null && shopManager.flamepurchased)
         {
+            DesactivateWeapon(inventory.currentWeaponIndex);
             inventory.weapons[index].SetActive(index == 3);
+            inventory.currentWeaponIndex = index;
         }
         else
         {
             Debug.Log("El lanzallamas no ha sido comprado aún.");
         }
+    }
+
+    public void DesactivateWeapon(int index)
+    {
+        inventory.weapons[index].SetActive(false);
     }
 }

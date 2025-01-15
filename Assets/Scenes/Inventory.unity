@@ -274,7 +274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1889213017}
         m_TargetAssemblyTypeName: InventoryEvents, Assembly-CSharp
-        m_MethodName: activateSword
+        m_MethodName: ActivateSword
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -406,7 +406,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1889213017}
         m_TargetAssemblyTypeName: InventoryEvents, Assembly-CSharp
-        m_MethodName: activateGrenadeLauncher
+        m_MethodName: ActivateGrenadeLauncher
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -672,7 +672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1889213017}
         m_TargetAssemblyTypeName: InventoryEvents, Assembly-CSharp
-        m_MethodName: activateRifle
+        m_MethodName: ActivateRifle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -924,7 +924,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1889213017}
         m_TargetAssemblyTypeName: InventoryEvents, Assembly-CSharp
-        m_MethodName: activateFlamethrower
+        m_MethodName: ActivateFlamethrower
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

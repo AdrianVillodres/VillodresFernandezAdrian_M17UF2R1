@@ -82,6 +82,7 @@ public class Character : MonoBehaviour, IHurteable
         Debug.Log("Llaves actuales: " + keys);
     }
 
+
     private void CheckKeysForDoor(int keysRequired, Action onSuccess)
     {
         if (keys >= keysRequired)
@@ -116,7 +117,7 @@ public class Character : MonoBehaviour, IHurteable
         }
     }
 
-    private void UpdateGoldText()
+    public void UpdateGoldText()
     {
         if (Gold != null)
         {
