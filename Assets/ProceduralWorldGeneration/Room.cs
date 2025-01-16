@@ -67,7 +67,7 @@ public class Room : MonoBehaviour
 
     void Update()
     {
-        if(name.Contains("end") && !updatedDoors)
+        if(name.Contains("End") && !updatedDoors)
         {
             RemoveUnconnectedDoors();
             updatedDoors = true;
