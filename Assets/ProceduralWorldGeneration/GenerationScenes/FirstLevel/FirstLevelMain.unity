@@ -310,7 +310,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 2.52, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &152253894
@@ -466,7 +466,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 0.96, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &215461766
@@ -948,7 +948,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 2.52, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &250048213
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 1.4, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &290412636
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 1.4, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &323283288
@@ -4410,7 +4410,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 2.52, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1135794007
@@ -4700,7 +4700,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 0.96, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1367686927
@@ -4982,7 +4982,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 0.96, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1499543802
@@ -5198,7 +5198,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 1.4, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1628976589
@@ -5336,7 +5336,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 2.52, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1703160907
@@ -5510,7 +5510,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 0.96, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1858087457
@@ -5716,7 +5716,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 240796735}
   spriteWidth: 0
   spriteHeight: 0
-  parallaxMultiplier: {x: 0.5, y: 0}
+  parallaxMultiplier: {x: 1.4, y: 0}
   enableHorizontalParallax: 1
   enableVerticalParallax: 1
 --- !u!212 &1905661621
@@ -5882,7 +5882,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.143, y: 1.603, z: -0.53027797}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1838, y: 1.1838, z: 1.1838}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1783233820}

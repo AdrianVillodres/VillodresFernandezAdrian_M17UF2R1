@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
         if (!isOpen)
         {
             isOpen = true;
-            animator.SetBool("Open", true);
+            animator.SetTrigger("Open");
             AudioManager.audioManager.PlayDoor();
             SceneManager.LoadSceneAsync("EndMenu");
         }
