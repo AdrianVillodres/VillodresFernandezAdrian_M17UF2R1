@@ -6,7 +6,6 @@ public class DungeonGenerator : MonoBehaviour
 {
     public DungeonGenerationData dungeonGenerationData;
     private List<Vector2Int> dungeonRooms;
-    private int counter;
 
     private void Start()
     {
@@ -21,7 +20,6 @@ public class DungeonGenerator : MonoBehaviour
         {
 
             RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y);
-            counter++;
         }
     }
 }
