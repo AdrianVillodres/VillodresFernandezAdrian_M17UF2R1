@@ -13,7 +13,9 @@ public class Room : MonoBehaviour
 
     public int Y;
 
-    private bool updatedDoors = false;
+    private bool updatedDoorsBoss = false;
+
+    private bool updatedDoorsShop = false;
 
     public Room(int x, int y)
     {
@@ -67,10 +69,15 @@ public class Room : MonoBehaviour
 
     void Update()
     {
-        if(name.Contains("End") && !updatedDoors)
+        if(name.Contains("End") && !updatedDoorsBoss)
         {
             RemoveUnconnectedDoors();
-            updatedDoors = true;
+            updatedDoorsBoss = true;
+        }
+        if (name.Contains("Shop") && !updatedDoorsShop)
+        {
+            RemoveUnconnectedDoors();
+            updatedDoorsShop = true;
         }
     }
 

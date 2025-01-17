@@ -31,6 +31,8 @@ public class RoomController : MonoBehaviour
 
     bool spawnedBossRoom = false;
 
+    bool spawnedShopRoom = false;
+
     bool updatedRooms = false;
 
     private void Awake()
@@ -60,7 +62,11 @@ public class RoomController : MonoBehaviour
             {
                 StartCoroutine(SpawnBossRoom());
             }
-            else if(spawnedBossRoom && !updatedRooms)
+            else if (!spawnedShopRoom)
+            {
+                StartCoroutine (SpawnShopRoom());
+            }
+            else if(spawnedBossRoom && spawnedShopRoom && !updatedRooms)
             {
                 foreach(Room room in loadedRooms)
                 {
@@ -90,6 +96,21 @@ public class RoomController : MonoBehaviour
             var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Y == tempRoom.Y);
             loadedRooms.Remove(roomToRemove);
             LoadRoom("End", tempRoom.X, tempRoom.Y);
+        }
+    }
+
+    IEnumerator SpawnShopRoom()
+    {
+        spawnedShopRoom = true;
+        yield return new WaitForSeconds(0.5f);
+        if (loadRoomQueue.Count == 0)
+        {
+            Room shopRoom = loadedRooms[(int)loadedRooms.Count / 2];
+            Room tempRoom = new Room(shopRoom.X, shopRoom.Y);
+            Destroy(shopRoom.gameObject);
+            var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Y == tempRoom.Y);
+            loadedRooms.Remove(roomToRemove);
+            LoadRoom("Shop", tempRoom.X, tempRoom.Y);
         }
     }
 
