@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class Door : MonoBehaviour
     public int keysRequired = 1;
     private bool isOpen = false;
     private Animator animator;
+    private static int counter = 0;
 
     private void Start()
     {
@@ -26,7 +28,30 @@ public class Door : MonoBehaviour
             isOpen = true;
             animator.SetTrigger("Open");
             AudioManager.audioManager.PlayDoor();
-            SceneManager.LoadSceneAsync("EndMenu");
+            counter++;
+
+            if(counter == 3)
+            {
+                StartCoroutine(Win());
+            }
+            else
+            {
+                StartCoroutine(Reload());
+            }
         }
+
+    }
+
+    IEnumerator Win()
+    {
+        yield return new WaitForSeconds(0.8f);
+        SceneManager.LoadSceneAsync("EndMenu");
+    }
+
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(0.8f);
+        SceneManager.LoadSceneAsync("FirstLevelMain");
+        Character.character.transform.position = Vector3.zero;
     }
 }
