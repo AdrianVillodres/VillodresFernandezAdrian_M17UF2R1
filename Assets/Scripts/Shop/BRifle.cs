@@ -8,14 +8,20 @@ public class BRifle : MonoBehaviour
     public int value = 1;
     private ShopManager shopManager;
     private Character character;
+    private Inventory inventory;
 
     void Start()
     {
-        character = GetComponent<Character>();
+        character = Character.character.GetComponent<Character>();
+        inventory = Character.character.GetComponent<Inventory>();
         shopManager = FindObjectOfType<ShopManager>();
         if (shopManager == null)
         {
             Debug.LogError("No se encontró ShopManager en la escena.");
+        }
+        if (inventory.riflepurchased == true)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -28,7 +34,7 @@ public class BRifle : MonoBehaviour
                 Character.character.gold -= value;
                 if (shopManager != null)
                 {
-                    shopManager.riflepurchased = true;
+                    inventory.riflepurchased = true;
                     Character.character.UpdateGoldText();
                 }
                 Destroy(gameObject);

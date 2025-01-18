@@ -110,7 +110,6 @@ public class BombFSM : MonoBehaviour, IHurteable
     {
         HP -= damage;
         HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
-
         if (healthSlider != null)
         {
             healthSlider.value = HP;

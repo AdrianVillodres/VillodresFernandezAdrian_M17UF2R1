@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 2728631414712673223, guid: b9fd30d57fac61c469fdd24617ae14a8, type: 3}
-  SpawnPoint: {fileID: 8755882717118001742}
+  SpawnPoint: {fileID: 2438084559957566291}
 --- !u!1 &6649819957963872904
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb1449eac05d7b945adf005e1cf2b99f, type: 2}
   CurrentState: {fileID: 11400000, guid: e9ca140050d11194d8a84f34470ee92a, type: 2}
   HP: 10
-  key: {fileID: 0}
+  key: {fileID: 356180288338223597, guid: 6f1196d2bfef3904f824435711d52425, type: 3}
   coinDropCount: 1
   eBullet: {fileID: 7639496278112038731}
 --- !u!1 &9128354548881495605

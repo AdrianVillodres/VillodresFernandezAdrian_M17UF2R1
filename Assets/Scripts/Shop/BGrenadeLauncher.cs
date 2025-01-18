@@ -6,13 +6,19 @@ public class BGrenadeLauncher : MonoBehaviour
 {
     public int value = 2;
     private ShopManager shopManager;
+    private Inventory inventory;
 
     void Start()
     {
         shopManager = FindObjectOfType<ShopManager>();
+        inventory = Character.character.GetComponent<Inventory>();
         if (shopManager == null)
         {
             Debug.LogError("No se encontró ShopManager en la escena.");
+        }
+        if (inventory.grenadepurchased == true)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -26,7 +32,7 @@ public class BGrenadeLauncher : MonoBehaviour
                 Character.character.UpdateGoldText();
                 if (shopManager != null)
                 {
-                    shopManager.grenadepurchased = true;
+                    inventory.grenadepurchased = true;
                 }
                 Destroy(gameObject);
                 Debug.Log("Lanzagranadas comprado.");

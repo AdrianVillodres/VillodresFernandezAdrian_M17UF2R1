@@ -18,7 +18,6 @@ public class WeaponSwitching : MonoBehaviour
     {
         playerInputs = new Inputs();
         brifle = GetComponent<BRifle>();
-        playerInputs.Weapon.Change.performed += OnChange;
     }
 
     void OnEnable()

@@ -7,6 +7,10 @@ public class Inventory : MonoBehaviour
 
     public int currentWeaponIndex = 0;
 
+    public bool riflepurchased = false;
+    public bool grenadepurchased = false;
+    public bool flamepurchased = false;
+
     void Start()
     {
         

@@ -37,7 +37,7 @@ public class InventoryEvents : MonoBehaviour
 
     public void ActivateRifle(int index)
     {
-        if (shopManager != null && shopManager.riflepurchased)
+        if (shopManager != null && inventory.riflepurchased)
         {
             DesactivateWeapon(inventory.currentWeaponIndex);
             inventory.weapons[index].SetActive(index == 1);
@@ -51,7 +51,7 @@ public class InventoryEvents : MonoBehaviour
 
     public void ActivateGrenadeLauncher(int index)
     {
-        if (shopManager != null && shopManager.grenadepurchased)
+        if (shopManager != null && inventory.grenadepurchased)
         {
             DesactivateWeapon(inventory.currentWeaponIndex);
             inventory.weapons[index].SetActive(index == 2);
@@ -65,7 +65,7 @@ public class InventoryEvents : MonoBehaviour
 
     public void ActivateFlamethrower(int index)
     {
-        if (shopManager != null && shopManager.flamepurchased)
+        if (shopManager != null && inventory.flamepurchased)
         {
             DesactivateWeapon(inventory.currentWeaponIndex);
             inventory.weapons[index].SetActive(index == 3);

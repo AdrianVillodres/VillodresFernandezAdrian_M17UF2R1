@@ -6,13 +6,19 @@ public class BFlamethrower : MonoBehaviour
 {
     public int value = 3;
     private ShopManager shopManager;
+    private Inventory inventory;
 
     void Start()
     {
         shopManager = FindObjectOfType<ShopManager>();
+        inventory = Character.character.GetComponent<Inventory>();
         if (shopManager == null)
         {
             Debug.LogError("No se encontró ShopManager en la escena.");
+        }
+        if(inventory.flamepurchased == true)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -26,7 +32,7 @@ public class BFlamethrower : MonoBehaviour
                 Character.character.UpdateGoldText();
                 if (shopManager != null)
                 {
-                    shopManager.flamepurchased = true;
+                    inventory.flamepurchased = true;
                 }
                 Destroy(gameObject);
                 Debug.Log("Lanzallamas comprado.");
