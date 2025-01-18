@@ -13,14 +13,13 @@ public class TurretFSM : MonoBehaviour, IHurteable
     private Animator animator;
     private Rigidbody2D rb;
     public EnemyBulletPool eBullet;
-    private Slider healthSlider;
-    private bool healthBarVisible = false;
+    public GameObject healthSlider;
 
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        healthSlider = GetComponentInChildren<Slider>();
+        healthSlider.SetActive(false);
     }
 
 
@@ -52,11 +51,11 @@ public class TurretFSM : MonoBehaviour, IHurteable
             GetComponent<Collider2D>().enabled = false;
             animator.SetBool("Die", true);
             GoToState<DieState>();
-            DropCoins();
+            DropKey();
         }
     }
 
-    private void DropCoins()
+    private void DropKey()
     {
         for (int i = 0; i < coinDropCount; i++)
         {
@@ -82,12 +81,13 @@ public class TurretFSM : MonoBehaviour, IHurteable
 
     public void Hurt(float damage)
     {
+        healthSlider.SetActive(true);
         HP -= damage;
-        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
+        HP = Mathf.Clamp(HP, 0, healthSlider.GetComponent<Slider>().maxValue);
 
         if (healthSlider != null)
         {
-            healthSlider.value = HP;
+            healthSlider.GetComponent<Slider>().value = HP;
         }
         CheckIfAlive();
     }

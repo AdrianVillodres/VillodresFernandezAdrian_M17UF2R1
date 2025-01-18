@@ -15,8 +15,8 @@ public class BombFSM : MonoBehaviour, IHurteable
     private Animator animator;
     private Rigidbody2D rb;
     private Collider2D collider2D;
-    private Slider healthSlider;
-    private bool healthBarVisible = false;
+    public GameObject healthSlider;
+
 
     public bool notInRoom = false;
 
@@ -25,7 +25,7 @@ public class BombFSM : MonoBehaviour, IHurteable
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();
-        healthSlider = GetComponentInChildren<Slider>();
+        healthSlider.SetActive(false);
     }
 
     private void Update()
@@ -108,11 +108,12 @@ public class BombFSM : MonoBehaviour, IHurteable
 
     public void Hurt(float damage)
     {
+        healthSlider.SetActive(true);
         HP -= damage;
-        HP = Mathf.Clamp(HP, 0, healthSlider.maxValue);
+        HP = Mathf.Clamp(HP, 0, healthSlider.GetComponent<Slider>().maxValue);
         if (healthSlider != null)
         {
-            healthSlider.value = HP;
+            healthSlider.GetComponent<Slider>().value = HP;
         }
         CheckIfAlive();
     }

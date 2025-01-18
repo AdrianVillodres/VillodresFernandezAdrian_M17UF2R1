@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
     public int keysRequired = 1;
     private bool isOpen = false;
     private Animator animator;
-    private static int counter = 0;
+    public static int counter = 0;
 
     private void Start()
     {

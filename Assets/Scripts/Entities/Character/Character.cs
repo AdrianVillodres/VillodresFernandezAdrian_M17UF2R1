@@ -16,7 +16,7 @@ public class Character : MonoBehaviour, IHurteable
 
     [Header("Atributos")]
     public float speed;
-    public float HP = 5;
+    public float HP;
     public int gold = 0;
     public int keys = 0;
 
@@ -43,7 +43,7 @@ public class Character : MonoBehaviour, IHurteable
 
             if (healthSlider != null)
             {
-                healthSlider.maxValue = 5;
+                healthSlider.maxValue = 10;
                 healthSlider.minValue = 0;
                 healthSlider.value = HP;
             }

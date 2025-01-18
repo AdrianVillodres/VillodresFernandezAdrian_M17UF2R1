@@ -585,6 +585,7 @@ MonoBehaviour:
   coin: {fileID: 1053979388816891220, guid: 0ce81093183ee6b489af1e2c91b57d58, type: 3}
   coinDropCount: 1
   target: {fileID: 0}
+  healthSlider: {fileID: 769726507528278286}
   notInRoom: 0
 --- !u!1 &7177744500838634252
 GameObject:
