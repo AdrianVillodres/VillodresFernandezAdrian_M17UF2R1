@@ -44,7 +44,6 @@ public class BombFSM : MonoBehaviour, IHurteable
             animator.SetBool("ColPlayer", true);
             rb.constraints = RigidbodyConstraints2D.FreezePosition;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            AudioManager.audioManager.PlayBoom();
             GoToState<ExplodeState>();
             Drop();
         }

@@ -877,8 +877,8 @@ MonoBehaviour:
   inInventory: 0
   speed: 2
   HP: 5
-  gold: 0
-  keys: 0
+  gold: 10
+  keys: 3
   healthSlider: {fileID: 280719644}
   Gold: {fileID: 1439872056}
   Keys: {fileID: 336016706}

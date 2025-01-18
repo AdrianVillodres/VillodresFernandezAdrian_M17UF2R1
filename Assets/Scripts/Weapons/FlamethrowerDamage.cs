@@ -13,7 +13,7 @@ public class FlamethrowerDamage : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (TryGetComponent<IHurteable>(out var enemy))
+        if (other.gameObject.TryGetComponent<IHurteable>(out var enemy))
         {
             enemy.Hurt(0.05f);
         }

@@ -9,7 +9,7 @@ public class ExplodeState : StatesSO<BombFSM>
 {
     public override void OnStateEnter(BombFSM ec)
     {
-
+        AudioManager.audioManager.PlayBoom();
     }
 
     public override void OnStateExit(BombFSM ec)

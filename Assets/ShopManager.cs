@@ -19,18 +19,4 @@ public class ShopManager : MonoBehaviour
     {
 
     }
-
-    /*        if(riflepurchased == true)
-        {
-            character.RemoveGold(1);
-        }
-        else if(grenadepurchased == true)
-        {
-            character.RemoveGold(2);
-        }
-        else if (flamepurchased == true)
-        {
-            character.RemoveGold(3);
-        }*/
-    //sacar del update todo el if y crear algo para que no este todo el rato actualizando el oro
 }

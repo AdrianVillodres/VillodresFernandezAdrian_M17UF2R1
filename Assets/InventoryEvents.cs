@@ -16,8 +16,6 @@ public class InventoryEvents : MonoBehaviour
         {
             Debug.LogError("No se encontró ShopManager en la escena.");
         }
-
-        ActivateSword(0);
     }
 
     void Update()
