@@ -31,9 +31,14 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
         ic.Disable();
     }
 
+
     private void Attack()
     {
-        animator.SetBool("Attack", true);
+        if (InputManager.Pause)
+        {
+            return;
+        }
+        animator.SetTrigger("Attack");
         StartCoroutine(EnableColliderTemporarily());
     }
 
@@ -44,7 +49,6 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
             swordCollider.enabled = true;
             yield return new WaitForSeconds(0.5f);
             swordCollider.enabled = false;
-            animator.SetBool("Attack", false);
         }
     }
 
