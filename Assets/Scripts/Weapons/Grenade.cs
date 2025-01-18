@@ -7,7 +7,6 @@ public class Grenade : MonoBehaviour
     public float bounciness = 0.6f;
     public PhysicsMaterial2D bounceMaterial;
     public float explosionDuration = 2f;
-
     private Collider2D grenadeCollider;
     public Collider2D explosionCollider;
     public Animator animator;
@@ -138,23 +137,26 @@ public class Grenade : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<IHurteable>(out var enemy) && animator.GetBool("Explosion"))
         {
             enemy.Hurt(2);
-            push(transform.position, collision.gameObject.GetComponent<Rigidbody2D>());
+            Push(transform.position, collision.gameObject.GetComponent<Rigidbody2D>());
         }
     }
 
-    public void push(Vector2 origin, Rigidbody2D target)
+    public void Push(Vector2 origin, Rigidbody2D target)
     {
         if (target == null) return;
-
-        
         Vector2 pushDirection = (target.position - origin).normalized;
-
-        
         target.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+        StartCoroutine(StopPush(target));
+    }
+
+    IEnumerator StopPush(Rigidbody2D target)
+    {
+        yield return new WaitForSeconds(1f);
+        target.velocity = Vector2.zero;
     }
 }

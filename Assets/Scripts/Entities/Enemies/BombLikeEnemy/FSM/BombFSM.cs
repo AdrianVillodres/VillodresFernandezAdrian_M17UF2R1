@@ -13,7 +13,6 @@ public class BombFSM : MonoBehaviour, IHurteable
     public int coinDropCount = 1;
     public GameObject target;
     private Animator animator;
-    private Rigidbody2D rb;
     private Collider2D collider2D;
     public GameObject healthSlider;
 
@@ -22,8 +21,8 @@ public class BombFSM : MonoBehaviour, IHurteable
 
     private void Start()
     {
+        coinDropCount = Random.Range(1, 3);
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<Collider2D>();
         healthSlider.SetActive(false);
     }
@@ -42,8 +41,6 @@ public class BombFSM : MonoBehaviour, IHurteable
         {
             collider2D.enabled = false;
             animator.SetBool("ColPlayer", true);
-            rb.constraints = RigidbodyConstraints2D.FreezePosition;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             GoToState<ExplodeState>();
             Drop();
         }
@@ -78,7 +75,10 @@ public class BombFSM : MonoBehaviour, IHurteable
         if (collision.gameObject.CompareTag("Player"))
         {
             target = collision.gameObject;
-            animator.SetBool("SeePlayer", true);
+            if(target != null)
+            {
+                animator.SetBool("SeePlayer", true);
+            }
             GoToState<ChaseState>();
         }
     }
@@ -88,7 +88,10 @@ public class BombFSM : MonoBehaviour, IHurteable
         if (collision.gameObject.CompareTag("Player"))
         {
             GoToState<IdleState>();
-            animator.SetBool("SeePlayer", false);
+            if (target != null)
+            {
+                animator.SetBool("SeePlayer", false);
+            }
         }
     }
 
@@ -101,7 +104,6 @@ public class BombFSM : MonoBehaviour, IHurteable
                 player.Hurt(1);
             }
             animator.SetBool("ColPlayer", true);
-            rb.constraints = RigidbodyConstraints2D.FreezePosition;
             GoToState<ExplodeState>();
         }
     }

@@ -9,7 +9,7 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
     private Collider2D swordCollider;
     private Inputs ic;
     private bool isAttacking = false;
-    private float pushForce = 10f;
+    public float pushForce = 10f;
 
 
     void Awake()
@@ -66,6 +66,13 @@ public class Melee : MonoBehaviour, Inputs.IWeaponActions
         if (target == null) return;
         Vector2 pushDirection = (target.position - origin).normalized;
         target.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+        StartCoroutine(StopPush(target));
+    }
+
+    IEnumerator StopPush(Rigidbody2D target)
+    {
+        yield return new WaitForSeconds(1f);
+        target.velocity = Vector2.zero;
     }
 
     public void OnShoot(InputAction.CallbackContext context)
