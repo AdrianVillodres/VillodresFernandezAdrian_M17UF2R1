@@ -545,7 +545,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04800582, y: -0.006400585}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -556,7 +556,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.8666667}
+  m_Size: {x: 0.5943427, y: 1.6106381}
   m_EdgeRadius: 0
 --- !u!50 &6373120950977651232
 Rigidbody2D:
@@ -602,9 +602,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d39ada7258a87e4a9cca0af633f4cae, type: 2}
   - {fileID: 11400000, guid: eb1449eac05d7b945adf005e1cf2b99f, type: 2}
   CurrentState: {fileID: 11400000, guid: e9ca140050d11194d8a84f34470ee92a, type: 2}
-  HP: 10
+  HP: 5
   key: {fileID: 356180288338223597, guid: 6f1196d2bfef3904f824435711d52425, type: 3}
-  coinDropCount: 1
+  KeyDropCount: 1
   eBullet: {fileID: 7639496278112038731}
   healthSlider: {fileID: 9128354548881495605}
 --- !u!1 &9128354548881495605

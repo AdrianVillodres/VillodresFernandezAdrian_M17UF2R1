@@ -29,6 +29,10 @@ public class Flamethrower : MonoBehaviour, Inputs.IWeaponActions
 
     public void OnShoot(InputAction.CallbackContext context)
     {
+        if (InputManager.Pause)
+        {
+            return;
+        }
         if (context.performed)
         {
             if (!flameParticles.isPlaying)

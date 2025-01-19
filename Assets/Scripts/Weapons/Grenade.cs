@@ -93,14 +93,14 @@ public class Grenade : MonoBehaviour
         ResetGrenade();
     }
 
-    private void ResetGrenade()
+    public void ResetGrenade()
     {
         ResetState();
 
-        if (GrenadePool.pool != null)
+        if (FindAnyObjectByType<GrenadePool>().stack != null)
         {
             animator.SetBool("Explosion", false);
-            GrenadePool.pool.Push(gameObject);
+            FindAnyObjectByType<GrenadePool>().Push(gameObject);
         }
         else
         {

@@ -24,6 +24,7 @@ public class EndMenu : MonoBehaviour
         Destroy(GameObject.Find("MainCharacter"));
         Destroy(GameObject.Find("AudioManager"));
         Destroy(GameObject.Find("GameEventsManager"));
+        Destroy(GameObject.Find("GameManager"));
         Door.counter = 0;
         SceneManager.LoadScene(1);
         Time.timeScale = 1;

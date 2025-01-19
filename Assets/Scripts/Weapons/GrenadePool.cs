@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class GrenadePool : MonoBehaviour
 {
-    public static GrenadePool pool;
-
     public GameObject Grenade;
     [SerializeField] private GameObject SpawnPoint;
 
-    private Stack<GameObject> stack;
+    public Stack<GameObject> stack;
 
     void Start()
     {
-        if (GrenadePool.pool != null && GrenadePool.pool != this)
-        {
-            Destroy(gameObject);
-        }
-        GrenadePool.pool = this;
-
-
         stack = new Stack<GameObject>();
-
     }
 
     public void Push(GameObject obj)
@@ -45,4 +35,10 @@ public class GrenadePool : MonoBehaviour
             return obj;
         }
     }
+
+    public void ClearGrenadePool()
+    {
+        stack.Clear();
+    }
+
 }

@@ -27,6 +27,7 @@ public class RifleShootBehaviour : MonoBehaviour, Inputs.IWeaponActions
 
     void Update()
     {
+
         if (fireTimer > 0)
         {
             fireTimer -= Time.deltaTime;
@@ -35,13 +36,17 @@ public class RifleShootBehaviour : MonoBehaviour, Inputs.IWeaponActions
 
     private void Shoot()
     {
-        GameObject bullet = BulletPool.pool.Pop();
+        GameObject bullet = FindAnyObjectByType<BulletPool>().Pop();
         bullet.transform.position = firePoint.position;
         bullet.transform.rotation = firePoint.rotation;
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
+        if (InputManager.Pause)
+        {
+            return;
+        }
         if (context.performed && fireTimer <= 0)
         {
             Shoot();

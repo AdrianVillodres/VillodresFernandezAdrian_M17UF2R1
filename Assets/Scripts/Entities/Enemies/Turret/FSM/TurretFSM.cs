@@ -9,7 +9,7 @@ public class TurretFSM : MonoBehaviour, IHurteable
     public StatesSO<TurretFSM> CurrentState;
     public float HP;
     public GameObject key;
-    public int coinDropCount = 1;
+    public int KeyDropCount = 1;
     private Animator animator;
     private Rigidbody2D rb;
     public EnemyBulletPool eBullet;
@@ -57,7 +57,7 @@ public class TurretFSM : MonoBehaviour, IHurteable
 
     private void DropKey()
     {
-        for (int i = 0; i < coinDropCount; i++)
+        for (int i = 0; i < KeyDropCount; i++)
         {
             Vector3 randomPosition = transform.position + new Vector3(
                 Random.Range(-1f, 1f),

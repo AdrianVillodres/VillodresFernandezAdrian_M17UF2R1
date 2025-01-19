@@ -38,7 +38,7 @@ public class GrenadeShootBehaviour : MonoBehaviour, Inputs.IWeaponActions
 
     private void Shoot()
     {
-        GameObject grenade = GrenadePool.pool.Pop();
+        GameObject grenade = FindAnyObjectByType<GrenadePool>().Pop();
         grenade.transform.position = firePoint.position;
         grenade.transform.rotation = firePoint.rotation;
 
@@ -54,6 +54,10 @@ public class GrenadeShootBehaviour : MonoBehaviour, Inputs.IWeaponActions
 
     public void OnShoot(InputAction.CallbackContext context)
     {
+        if (InputManager.Pause)
+        {
+            return;
+        }
         if (context.performed && fireTimer <= 0)
         {
             Shoot();

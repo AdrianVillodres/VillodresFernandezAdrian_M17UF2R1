@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 47211066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.31, y: 9.86, z: 5}
+  m_LocalPosition: {x: -15.56, y: 9.86, z: 5}
   m_LocalScale: {x: 3.3042574, y: 3.4454653, z: 2.8241518}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -785,7 +785,6 @@ Transform:
   m_Children:
   - {fileID: 188091059}
   - {fileID: 834062884}
-  - {fileID: 2008475524}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &240796736
@@ -816,8 +815,8 @@ MonoBehaviour:
   inInventory: 0
   speed: 2
   HP: 10
-  gold: 10
-  keys: 3
+  gold: 0
+  keys: 0
   healthSlider: {fileID: 280719644}
   Gold: {fileID: 1439872056}
   Keys: {fileID: 336016706}
@@ -1240,6 +1239,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &322013290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322013292}
+  - component: {fileID: 322013291}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &322013291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322013290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfaaf5abca211849bd94af3fb5b190a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &322013292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322013290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.70485854, y: 20.387383, z: -0.4082036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2008475524}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323283285
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,7 +4273,7 @@ Transform:
   m_GameObject: {fileID: 979183245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.36, y: 9.86, z: 5}
+  m_LocalPosition: {x: 2.08, y: 9.86, z: 5}
   m_LocalScale: {x: 3.3042574, y: 3.4454653, z: 2.8241518}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5155,7 +5199,7 @@ Transform:
   m_GameObject: {fileID: 1651848260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.31, y: -1.23, z: 5}
+  m_LocalPosition: {x: -15.61, y: -1.23, z: 5}
   m_LocalScale: {x: 3.3042574, y: 3.4454653, z: 2.8241518}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5329,7 +5373,7 @@ Transform:
   m_GameObject: {fileID: 1783233819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.36, y: -1.23, z: 5}
+  m_LocalPosition: {x: 2.06, y: -1.23, z: 5}
   m_LocalScale: {x: 3.3042574, y: 3.4454653, z: 2.8241518}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5758,15 +5802,15 @@ Transform:
   m_GameObject: {fileID: 2008475523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.143, y: 1.603, z: -0.53027797}
-  m_LocalScale: {x: 1.1838, y: 1.1838, z: 1.1838}
+  m_LocalPosition: {x: -3.0248585, y: -19.147383, z: -0.122074366}
+  m_LocalScale: {x: 1.5604851, y: 1.5604851, z: 1.5604851}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1783233820}
   - {fileID: 979183246}
   - {fileID: 47211067}
   - {fileID: 1651848261}
-  m_Father: {fileID: 240796735}
+  m_Father: {fileID: 322013292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105743892 stripped
 GameObject:
@@ -6036,3 +6080,4 @@ SceneRoots:
   - {fileID: 1474745238}
   - {fileID: 21485540}
   - {fileID: 852628742}
+  - {fileID: 322013292}

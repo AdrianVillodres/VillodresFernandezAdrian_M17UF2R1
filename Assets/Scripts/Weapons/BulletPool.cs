@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    public static BulletPool pool;
-
     public GameObject Bullet;
     [SerializeField] private GameObject SpawnPoint;
 
-    private Stack<GameObject> stack;
+    public Stack<GameObject> stack;
 
     void Start()
     {
-        if (BulletPool.pool != null && BulletPool.pool != this)
-        {
-            Destroy(gameObject);
-        }
-        BulletPool.pool = this;
-
-
         stack = new Stack<GameObject>();
     }
 
@@ -43,5 +34,10 @@ public class BulletPool : MonoBehaviour
             GameObject obj = Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
             return obj;
         }
+    }
+
+    public void ClearBulletPool()
+    {
+        stack.Clear();
     }
 }

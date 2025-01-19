@@ -20,7 +20,20 @@ public class Bullet : MonoBehaviour
         lifeTimer -= Time.deltaTime;
         if (lifeTimer <= 0)
         {
-            BulletPool.pool.Push(gameObject);
+            FindAnyObjectByType<BulletPool>().Push(gameObject);
+        }
+    }
+
+    private void ResetGrenade()
+    {
+
+        if (FindAnyObjectByType<GrenadePool>().stack != null)
+        {
+            FindAnyObjectByType<BulletPool>().Push(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -33,7 +46,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bomb") || collision.gameObject.CompareTag("Turret"))
         {
-            BulletPool.pool.Push(gameObject);
+            FindAnyObjectByType<BulletPool>().Push(gameObject);
         }
         if (collision.gameObject.TryGetComponent<IHurteable>(out var enemy))
         {
