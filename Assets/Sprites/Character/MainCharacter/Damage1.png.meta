@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: dffc42e2fdf634445a34bde2a566a959
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Damage1_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 504
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7061514a124b143b626aef676dc4cd
+      internalID: -1978171531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage1_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 504
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd62de62b7141c41a410becf19e9582
+      internalID: 1907173182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage1_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 504
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291cd04f387ccbd4f9dbb148c12fdc90
+      internalID: 192325470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Damage1_0: 1416743003
+      Damage1_1: 487733695
+      Damage1_10: 1907173182
+      Damage1_11: 192325470
+      Damage1_12: -1955922362
+      Damage1_13: -561801566
+      Damage1_14: 1913825087
+      Damage1_15: -1869541999
+      Damage1_16: 998339128
+      Damage1_17: 1630646061
+      Damage1_18: 886642625
+      Damage1_19: 732687900
+      Damage1_2: 806370375
+      Damage1_20: 1243668126
+      Damage1_21: -1537009636
+      Damage1_22: -2001284171
+      Damage1_23: -2019240537
+      Damage1_24: -923065492
+      Damage1_25: 1782187688
+      Damage1_26: 1459002236
+      Damage1_27: -1948858326
+      Damage1_28: 254782636
+      Damage1_29: -2008984888
+      Damage1_3: 2031282386
+      Damage1_30: 1596945591
+      Damage1_31: -60659196
+      Damage1_32: 2015152550
+      Damage1_33: 2042663951
+      Damage1_34: -1033356599
+      Damage1_35: 844486447
+      Damage1_36: 2008894738
+      Damage1_37: -1210806347
+      Damage1_38: 111819539
+      Damage1_39: -652833132
+      Damage1_4: 554271742
+      Damage1_40: 128918802
+      Damage1_41: -372613201
+      Damage1_42: 813259207
+      Damage1_43: -463354771
+      Damage1_44: -1007590981
+      Damage1_45: -883015888
+      Damage1_46: -326343763
+      Damage1_47: -334232651
+      Damage1_48: 2013966468
+      Damage1_49: -1373244162
+      Damage1_5: -2101118966
+      Damage1_50: -737547240
+      Damage1_51: -823326170
+      Damage1_52: -215784354
+      Damage1_53: 874965191
+      Damage1_54: 1356041480
+      Damage1_55: 1369251627
+      Damage1_56: 2077413750
+      Damage1_57: -1699549337
+      Damage1_58: 562932185
+      Damage1_59: 1068447765
+      Damage1_6: -809370143
+      Damage1_60: 1466512488
+      Damage1_61: -1294245093
+      Damage1_62: 1381581909
+      Damage1_63: 1843622745
+      Damage1_64: -360056689
+      Damage1_65: -381047307
+      Damage1_66: 1327409371
+      Damage1_67: 1377747908
+      Damage1_68: -1792541871
+      Damage1_69: -708800855
+      Damage1_7: 94230687
+      Damage1_70: -124374531
+      Damage1_71: 1909876543
+      Damage1_72: -1261983164
+      Damage1_73: -739496511
+      Damage1_74: 1531895840
+      Damage1_75: -2137539825
+      Damage1_76: -316035569
+      Damage1_77: 149371797
+      Damage1_78: 1984799522
+      Damage1_79: 1325582804
+      Damage1_8: -1837893203
+      Damage1_80: 586821329
+      Damage1_81: 13810620
+      Damage1_82: 487542528
+      Damage1_83: 1419512885
+      Damage1_84: -1562632971
+      Damage1_85: -2099328559
+      Damage1_86: -440703422
+      Damage1_87: -168650114
+      Damage1_88: 56860520
+      Damage1_89: -157177271
+      Damage1_9: -1978171531
+      Damage1_90: 625233181
+      Damage1_91: 1582101951
+      Damage1_92: 237077319
+      Damage1_93: 1030763653
+      Damage1_94: 444986647
+      Damage1_95: -997874292
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
